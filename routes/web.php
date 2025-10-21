@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FAQController;
+use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('welcome', [

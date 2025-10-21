@@ -17,8 +17,7 @@ import {
     type ColumnDef,
     type SortingState,
 } from '@tanstack/react-table';
-import React, { useState } from 'react';
-
+import React, { useCallback, useMemo, useState } from 'react';
 import {
     MdKeyboardArrowLeft,
     MdKeyboardArrowRight,
@@ -27,22 +26,50 @@ import {
 } from 'react-icons/md';
 
 interface DataTableProps<TData> {
-    columns: ColumnDef<TData, any>[];
+    columns: ColumnDef<TData>[];
     data: TData[];
     createButton?: React.ReactNode;
+    showIndexColumn?: boolean;
 }
 
 export default function DataTable<TData>({
     columns,
     data,
     createButton = null,
+    showIndexColumn = false,
 }: DataTableProps<TData>) {
     const [globalFilter, setGlobalFilter] = useState('');
     const [sorting, setSorting] = useState<SortingState>([]);
 
+    const memoizedData = useMemo(() => data, [data]);
+
+    const handleGlobalFilterChange = useCallback(
+        (e: React.ChangeEvent<HTMLInputElement>) => {
+            setGlobalFilter(e.target.value);
+        },
+        [],
+    );
+
+    const finalColumns = useMemo(() => {
+        if (!showIndexColumn) return columns;
+
+        const indexColumn: ColumnDef<TData> = {
+            id: 'index',
+            header: '#',
+            cell: ({ row, table }) => {
+                const { pageIndex, pageSize } = table.getState().pagination;
+                const totalFiltered = table.getFilteredRowModel().rows.length;
+                const absolute = pageIndex * pageSize + row.index + 1;
+                return absolute <= totalFiltered ? absolute : row.index + 1;
+            },
+        };
+
+        return [indexColumn, ...columns];
+    }, [columns, showIndexColumn]);
+
     const table = useReactTable({
-        data,
-        columns,
+        data: memoizedData,
+        columns: finalColumns,
         state: {
             globalFilter,
             sorting,
@@ -60,8 +87,8 @@ export default function DataTable<TData>({
             <div className="flex items-center justify-between">
                 <Input
                     placeholder="Search..."
-                    value={globalFilter ?? ''}
-                    onChange={(e) => setGlobalFilter(e.target.value)}
+                    value={globalFilter}
+                    onChange={handleGlobalFilterChange}
                     className="w-1/3"
                 />
                 {createButton}
@@ -76,14 +103,14 @@ export default function DataTable<TData>({
                                     <th
                                         key={header.id}
                                         onClick={header.column.getToggleSortingHandler()}
-                                        className="cursor-pointer px-4 py-2 text-left"
+                                        className="cursor-pointer px-4 py-2 text-left select-none"
                                     >
                                         {flexRender(
                                             header.column.columnDef.header,
                                             header.getContext(),
                                         )}
                                         {{
-                                            asc: '  ↑',
+                                            asc: ' ↑',
                                             desc: ' ↓',
                                         }[
                                             header.column.getIsSorted() as string
@@ -94,19 +121,20 @@ export default function DataTable<TData>({
                         ))}
                     </thead>
                     <tbody>
-                        {table.getRowModel().rows.map((row) => (
-                            <tr key={row.id} className="border-b">
-                                {row.getVisibleCells().map((cell) => (
-                                    <td key={cell.id} className="px-4 py-2">
-                                        {flexRender(
-                                            cell.column.columnDef.cell,
-                                            cell.getContext(),
-                                        )}
-                                    </td>
-                                ))}
-                            </tr>
-                        ))}
-                        {table.getRowModel().rows.length === 0 && (
+                        {table.getRowModel().rows.length > 0 ? (
+                            table.getRowModel().rows.map((row) => (
+                                <tr key={row.id} className="border-b">
+                                    {row.getVisibleCells().map((cell) => (
+                                        <td key={cell.id} className="px-4 py-2">
+                                            {flexRender(
+                                                cell.column.columnDef.cell,
+                                                cell.getContext(),
+                                            )}
+                                        </td>
+                                    ))}
+                                </tr>
+                            ))
+                        ) : (
                             <tr>
                                 <td
                                     colSpan={columns.length}

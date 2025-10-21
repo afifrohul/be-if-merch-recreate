@@ -28,15 +28,6 @@ interface FaqIndexProps {
 export default function Index({ faqs }: FaqIndexProps) {
     const columns: ColumnDef<FAQ>[] = [
         {
-            id: 'index',
-            header: '#',
-            cell: ({ row, table }) =>
-                row.index +
-                1 +
-                table.getState().pagination.pageIndex *
-                    table.getState().pagination.pageSize,
-        },
-        {
             accessorKey: 'question',
             header: 'Question',
             cell: (info) => info.getValue(),
@@ -63,9 +54,10 @@ export default function Index({ faqs }: FaqIndexProps) {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Dashboard" />
-            <div className='p-4'>
+            <div className="p-4">
                 <div className="mx-auto flex w-full flex-col gap-4">
                     <DataTable<FAQ>
+                        showIndexColumn
                         columns={columns}
                         data={faqs}
                         createButton={
