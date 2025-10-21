@@ -1,4 +1,3 @@
-import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';
 import { NavUser } from '@/components/nav-user';
 import {
@@ -13,7 +12,16 @@ import {
 import { dashboard } from '@/routes';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
-import { BookOpen, Folder, LayoutGrid } from 'lucide-react';
+import {
+    BookImage,
+    BookOpen,
+    Box,
+    Briefcase,
+    Folder,
+    LayoutGrid,
+    ShoppingCart,
+    TableOfContents,
+} from 'lucide-react';
 import AppLogo from './app-logo';
 
 const mainNavItems: NavItem[] = [
@@ -21,6 +29,31 @@ const mainNavItems: NavItem[] = [
         title: 'Dashboard',
         href: dashboard(),
         icon: LayoutGrid,
+    },
+    {
+        title: 'Products Category',
+        href: '/product-categories',
+        icon: Briefcase,
+    },
+    {
+        title: 'Products',
+        href: '/products',
+        icon: ShoppingCart,
+    },
+    {
+        title: 'Products Variant',
+        href: '/product-variants',
+        icon: Box,
+    },
+    {
+        title: 'Products Gallery',
+        href: '/product-galleries',
+        icon: BookImage,
+    },
+    {
+        title: 'FAQ',
+        href: '/faqs',
+        icon: TableOfContents,
     },
 ];
 
