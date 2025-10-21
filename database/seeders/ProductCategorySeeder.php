@@ -12,6 +12,18 @@ class ProductCategorySeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $categories = [
+            ['name' => 'Apparel', 'slug' => 'apparel'],
+            ['name' => 'Accessories', 'slug' => 'accessories'],
+            ['name' => 'Electronics', 'slug' => 'electronics'],
+            ['name' => 'HomeGoods', 'slug' => 'homegoods'],
+        ];
+
+        foreach ($categories as $category) {
+            \App\Models\ProductCategory::firstOrCreate(
+                ['slug' => $category['slug']],
+                ['name' => $category['name']]
+            );
+        }
     }
 }
