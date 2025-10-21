@@ -5,6 +5,7 @@ use Laravel\Fortify\Features;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FAQController;
 use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\ProductController;
 use Inertia\Inertia;
 
 Route::get('/', function () {
@@ -30,6 +31,13 @@ Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
     Route::get('/product-categories/{id}/edit', [ProductCategoryController::class, 'edit'])->name('product-categories.edit');
     Route::put('/product-categories/{id}', [ProductCategoryController::class, 'update'])->name('product-categories.update');
     Route::delete('/product-categories/{id}', [ProductCategoryController::class, 'destroy'])->name('product-categories.destroy');
+
+    Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+    Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+    Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+    Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
+    Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
+    Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
 });
 
 require __DIR__.'/settings.php';

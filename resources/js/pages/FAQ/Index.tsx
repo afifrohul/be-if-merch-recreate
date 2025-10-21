@@ -53,7 +53,7 @@ export default function Index({ faqs }: FaqIndexProps) {
     ];
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title="Dashboard" />
+            <Head title="FAQ" />
             <div className="p-4">
                 <div className="mx-auto flex w-full flex-col gap-4">
                     <DataTable<FAQ>

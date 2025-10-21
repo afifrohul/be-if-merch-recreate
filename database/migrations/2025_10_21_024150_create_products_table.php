@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug');
             $table->text('description');
-            $table->decimal('base_price', 10, 2);
             $table->enum('status', ['released', 'unreleased'])->default('unreleased');
             $table->timestamps();
         });
