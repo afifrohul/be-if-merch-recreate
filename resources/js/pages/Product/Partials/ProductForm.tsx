@@ -60,12 +60,6 @@ export function ProductForm({
 }: ProductFormProps) {
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const initialDataParsed = {
-        ...initialData,
-        product_category_id: initialData
-            ? String(initialData.product_category_id)
-            : '',
-    };
 
     const form = useForm<ProductFormValues>({
         resolver: zodResolver(formSchema),
