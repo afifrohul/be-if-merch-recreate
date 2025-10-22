@@ -19,7 +19,6 @@ const breadcrumbs: BreadcrumbItem[] = [
 ];
 
 export default function Edit({ product, productCategory }: EditProps) {
-    console.log(product);
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Edit Product" />

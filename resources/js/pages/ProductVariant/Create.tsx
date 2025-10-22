@@ -1,34 +1,36 @@
 import { Separator } from '@/components/ui/separator';
 import AppLayout from '@/layouts/app-layout';
-import { type BreadcrumbItem } from '@/types';
+import { BreadcrumbItem } from '@/types';
+import { ProductVariantForm } from './Partials/ProductVariantForm';
 import { Head } from '@inertiajs/react';
-import { ProductForm } from './Partials/ProductForm';
 
 const breadcrumbs: BreadcrumbItem[] = [
-    { title: 'Product - Create', href: '/products/create' },
+    { title: 'Product Variants', href: '/product-variants' },
 ];
 
-type ProductCategory = {
+type Product = {
     id: string;
     name: string;
 };
 
 interface CreateProps {
-    productCategory: ProductCategory[];
+    products: Product[];
 }
 
-export default function Create({ productCategory }: CreateProps) {
+export default function Create({ products }: CreateProps) {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title="Create Product" />
+            <Head title="Create Product Variant" />
             <div className="container mx-auto p-4">
                 <div className="rounded-md border p-4">
-                    <h1 className="mb-4 text-xl font-bold">Create Product</h1>
+                    <h1 className="mb-4 text-xl font-bold">
+                        Create Product Variant
+                    </h1>
                     <Separator className="my-4" />
-                    <ProductForm
-                        submitUrl="/products"
+                    <ProductVariantForm
+                        submitUrl="/product-variants"
                         method="post"
-                        product_category={productCategory}
+                        product={products}
                     />
                 </div>
             </div>
