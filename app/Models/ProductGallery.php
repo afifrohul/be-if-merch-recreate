@@ -8,7 +8,7 @@ class ProductGallery extends Model
 {
     protected $fillable = [
         'product_id',
-        'image_path',
+        'image',
     ];
 
     public function product()

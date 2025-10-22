@@ -7,6 +7,7 @@ use App\Http\Controllers\FAQController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductVariantController;
+use App\Http\Controllers\ProductGalleryController;
 use Inertia\Inertia;
 
 Route::get('/', function () {
@@ -38,6 +39,13 @@ Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
     Route::get('/product-variants/{id}/edit', [ProductVariantController::class, 'edit'])->name('product-variants.edit');
     Route::put('/product-variants/{id}', [ProductVariantController::class, 'update'])->name('product-variants.update');
     Route::delete('/product-variants/{id}', [ProductVariantController::class, 'destroy'])->name('product-variants.destroy');
+
+    Route::get('/product-galleries', [ProductGalleryController::class, 'index'])->name('product-galleries.index');
+    Route::get('/product-galleries/create', [ProductGalleryController::class, 'create'])->name('product-galleries.create');
+    Route::post('/product-galleries', [ProductGalleryController::class, 'store'])->name('product-galleries.store');
+    Route::get('/product-galleries/{id}/edit', [ProductGalleryController::class, 'edit'])->name('product-galleries.edit');
+    Route::put('/product-galleries/{id}', [ProductGalleryController::class, 'update'])->name('product-galleries.update');
+    Route::delete('/product-galleries/{id}', [ProductGalleryController::class, 'destroy'])->name('product-galleries.destroy');
 
     Route::get('/faqs', [FAQController::class, 'index'])->name('faqs.index');
     Route::get('/faqs/create', [FAQController::class, 'create'])->name('faqs.create');

@@ -60,7 +60,6 @@ export function ProductForm({
 }: ProductFormProps) {
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-
     const form = useForm<ProductFormValues>({
         resolver: zodResolver(formSchema),
         defaultValues: initialData
