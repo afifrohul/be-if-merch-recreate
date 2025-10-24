@@ -15,6 +15,7 @@ class ProductSeeder extends Seeder
         \App\Models\Product::insert([
             [
                 'product_category_id' => 1,
+                'image' => 'products/default.jpg',
                 'name' => 'Sample Product 1',
                 'slug' => 'sample-product-1',
                 'description' => 'This is a description for Sample Product 1.',
@@ -24,6 +25,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 'product_category_id' => 2,
+                'image' => 'products/default.jpg',
                 'name' => 'Sample Product 2',
                 'slug' => 'sample-product-2',
                 'description' => 'This is a description for Sample Product 2.',
@@ -33,6 +35,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 'product_category_id' => 1,
+                'image' => 'products/default.jpg',
                 'name' => 'Sample Product 3',
                 'slug' => 'sample-product-3',
                 'description' => 'This is a description for Sample Product 3.',
@@ -42,6 +45,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 'product_category_id' => 3,
+                'image' => 'products/default.jpg',
                 'name' => 'Sample Product 4',
                 'slug' => 'sample-product-4',
                 'description' => 'This is a description for Sample Product 4.',
@@ -51,6 +55,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 'product_category_id' => 2,
+                'image' => 'products/default.jpg',
                 'name' => 'Sample Product 5',
                 'slug' => 'sample-product-5',
                 'description' => 'This is a description for Sample Product 5.',
@@ -60,6 +65,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 'product_category_id' => 3,
+                'image' => 'products/default.jpg',
                 'name' => 'Sample Product 6',
                 'slug' => 'sample-product-6',
                 'description' => 'This is a description for Sample Product 6.',

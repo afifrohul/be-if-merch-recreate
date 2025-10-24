@@ -25,7 +25,7 @@ import { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import * as z from 'zod';
 
-const formSchema = z.object({
+const baseSchema = z.object({
     product_category_id: z.string(),
     name: z
         .string()
@@ -35,7 +35,20 @@ const formSchema = z.object({
         .string()
         .min(10, 'Description must be at least 10 characters.')
         .max(500, 'Description must be at most 500 characters.'),
-    status: z.enum(['released', 'unreleased']),
+    status: z.string(),
+});
+
+const imageSchema = z.object({
+    image: z
+        .custom<FileList>((val) => val instanceof FileList && val.length > 0, {
+            message: 'Image is required',
+        })
+        .optional(),
+});
+
+const formSchema = z.object({
+    ...baseSchema.shape,
+    ...imageSchema.shape,
 });
 
 export type ProductFormValues = z.infer<typeof formSchema>;
@@ -46,7 +59,14 @@ type ProductCategory = {
 };
 
 interface ProductFormProps {
-    initialData?: ProductFormValues & { id?: number };
+    initialData?: {
+        id?: number;
+        product_category_id?: string;
+        name?: string;
+        description?: string;
+        status?: string;
+        image?: string;
+    };
     product_category: ProductCategory[];
     submitUrl: string;
     method?: 'post' | 'put';
@@ -62,34 +82,40 @@ export function ProductForm({
 
     const form = useForm<ProductFormValues>({
         resolver: zodResolver(formSchema),
-        defaultValues: initialData
-            ? {
-                  ...initialData,
-                  product_category_id: String(initialData.product_category_id),
-              }
-            : {
-                  product_category_id: '',
-                  name: '',
-                  description: '',
-                  status: 'unreleased',
-              },
+        defaultValues: {
+            product_category_id: initialData?.product_category_id
+                ? String(initialData.product_category_id)
+                : '',
+            name: initialData?.name,
+            description: initialData?.description,
+            status: initialData?.status,
+            image: undefined as unknown as FileList,
+        },
     });
 
     const onSubmit = (data: ProductFormValues) => {
         setIsSubmitting(true);
 
-        router[method](
-            submitUrl,
-            { ...data, product_category_id: Number(data.product_category_id) },
-            {
-                onSuccess: () => {
-                    setIsSubmitting(false);
-                },
-                onError: () => {
-                    setIsSubmitting(false);
-                },
-            },
-        );
+        const formData = new FormData();
+        formData.append('product_category_id', data.product_category_id);
+        formData.append('name', data.name);
+        formData.append('description', data.description);
+        formData.append('status', data.status);
+
+        if (data.image && data.image.length > 0) {
+            formData.append('image', data.image[0]);
+        }
+
+        if (method === 'put') {
+            formData.append('_method', 'PUT');
+        }
+
+        router.post(submitUrl, formData, {
+            forceFormData: true,
+            onSuccess: () => setIsSubmitting(false),
+            onError: () => setIsSubmitting(false),
+        });
+
     };
 
     return (
@@ -144,6 +170,31 @@ export function ProductForm({
                                 placeholder="Enter product name"
                                 autoComplete="off"
                                 required
+                            />
+                            {fieldState.invalid && (
+                                <FieldError errors={[fieldState.error]} />
+                            )}
+                        </Field>
+                    )}
+                />
+
+                <Controller
+                    name="image"
+                    control={form.control}
+                    render={({ field, fieldState }) => (
+                        <Field data-invalid={fieldState.invalid}>
+                            <FieldLabel htmlFor="image">
+                                Image{' '}
+                                {method === 'post' && (
+                                    <span className="text-red-500">*</span>
+                                )}
+                            </FieldLabel>
+
+                            <Input
+                                id="image"
+                                type="file"
+                                accept="image/*"
+                                onChange={(e) => field.onChange(e.target.files)}
                             />
                             {fieldState.invalid && (
                                 <FieldError errors={[fieldState.error]} />

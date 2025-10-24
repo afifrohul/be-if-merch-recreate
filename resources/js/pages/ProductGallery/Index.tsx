@@ -63,7 +63,7 @@ export default function Index({ productGallery }: ProductGalleryIndexProps) {
     ];
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title="FAQ" />
+            <Head title="Product Gallery" />
             <div className="p-4">
                 <div className="mx-auto flex w-full flex-col gap-4">
                     <DataTable<ProductGallery>

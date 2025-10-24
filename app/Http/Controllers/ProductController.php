@@ -43,13 +43,23 @@ class ProductController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'nullable|string|max:500',
             'status' => 'required|in:released,unreleased',
+            'image' => 'required|image|max:2048',
         ]);
         
         try {
 
-            $validated['slug'] = \Str::slug($validated['name']);
+            $file =  $request->file('image');
+            $filename = now()->format('Ymd_His') . '_' . \Str::random(8) . '.' . $file->getClientOriginalExtension();
+            $path = $file->storeAs('products', $filename, 'public');
 
-            Product::create($validated);
+            Product::create([
+                'product_category_id' => $validated['product_category_id'],
+                'name' => $validated['name'],
+                'slug' => \Str::slug($validated['name']),
+                'description' => $validated['description'],
+                'status' => $validated['status'],
+                'image' => $path
+            ]);
 
             return redirect()->route('products.index')->with('success', 'Product created successfully.');
         } catch (\Exception $e) {
@@ -91,14 +101,39 @@ class ProductController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'nullable|string|max:500',
             'status' => 'required|in:released,unreleased',
+            'image' => 'nullable|image|max:2048',
         ]);
 
         try {
 
-            $validated['slug'] = \Str::slug($validated['name']);
+            $product = Product::findOrFail($id);
 
-            $product = Product::with('category')->findOrFail($id);
-            $product->update($validated);
+            if ($request->hasFile('image')) {
+                if ($product->image && \Storage::disk('public')->exists($product->image)) {
+                    \Storage::disk('public')->delete($product->image);
+                }
+
+                $file =  $request->file('image');
+                $filename = now()->format('Ymd_His') . '_' . \Str::random(8) . '.' . $file->getClientOriginalExtension();
+                $path = $file->storeAs('products', $filename, 'public');
+
+                $product->update([
+                    'product_category_id' => $validated['product_category_id'],
+                    'name' => $validated['name'],
+                    'slug' => \Str::slug($validated['name']),
+                    'description' => $validated['description'],
+                    'status' => $validated['status'],
+                    'image' => $path,
+                ]);
+            } else {
+                $product->update([
+                    'product_category_id' => $validated['product_category_id'],
+                    'name' => $validated['name'],
+                    'slug' => \Str::slug($validated['name']),
+                    'description' => $validated['description'],
+                    'status' => $validated['status'],
+                ]);
+            }
 
             return redirect()->route('products.index')->with('success', 'Product updated successfully.');
         } catch (\Exception $e) {
@@ -114,7 +149,13 @@ class ProductController extends Controller
     {
         try {
             $product = Product::findOrFail($id);
+
+            if ($product->image && \Storage::disk('public')->exists($product->image)) {
+                \Storage::disk('public')->delete($product->image);
+            }
+
             $product->delete();
+            
             return redirect()->route('products.index')->with('success', 'Product deleted successfully.');
         } catch (\Exception $e) {
             Log::error('Error deleting product: ' . $e->getMessage());

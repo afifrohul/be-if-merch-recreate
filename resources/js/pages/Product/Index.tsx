@@ -18,6 +18,7 @@ const breadcrumbs: BreadcrumbItem[] = [
 type Product = {
     id: number;
     product_category_id: number;
+    image: string;
     name: string;
     description: string;
     status: 'released' | 'unreleased';
@@ -29,6 +30,19 @@ interface ProductIndexProps {
 
 export default function Index({ products }: ProductIndexProps) {
     const columns: ColumnDef<Product>[] = [
+        {
+            accessorKey: 'image',
+            header: 'Image',
+            cell: ({ row }) => (
+                <div>
+                    <img
+                        src={`/storage/${row.original.image}`}
+                        alt={`${row.original.id}-image`}
+                        className="h-16"
+                    />
+                </div>
+            ),
+        },
         {
             accessorKey: 'name',
             header: 'Name',
@@ -71,7 +85,7 @@ export default function Index({ products }: ProductIndexProps) {
     ];
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title="FAQ" />
+            <Head title="Product" />
             <div className="p-4">
                 <div className="mx-auto flex w-full flex-col gap-4">
                     <DataTable<Product>
