@@ -18,4 +18,9 @@ class ProductVariant extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
+    public function items()
+    {
+        return $this->hasMany(TransactionItems::class);
+    }
 }
