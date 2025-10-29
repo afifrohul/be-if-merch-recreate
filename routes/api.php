@@ -7,10 +7,11 @@ use App\Http\Controllers\API\FAQController;
 use App\Http\Controllers\API\ProductCategoryController;
 use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\TransactionController;
+use App\Http\Controllers\API\ProfileController;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+// Route::get('/user', function (Request $request) {
+//     return $request->user();
+// })->middleware('auth:sanctum');
 
 Route::post('/register', [App\Http\Controllers\API\AuthController::class, 'register']);
 Route::post('/login', [App\Http\Controllers\API\AuthController::class, 'login']);
@@ -24,6 +25,9 @@ Route::get('/products', [ProductController::class, 'index']);
 Route::get('/product/{id}', [ProductController::class, 'show']);
 
 Route::middleware(['auth:sanctum'])->group(function () {
+
+    Route::get('/user', [ProfileController::class, 'index']);
+    Route::post('/profile', [ProfileController::class, 'store']);
     
     Route::get('/transactions', [TransactionController::class, 'index']);
     Route::get('/transactions/{id}', [TransactionController::class, 'show']);

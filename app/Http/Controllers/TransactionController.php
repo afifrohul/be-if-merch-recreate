@@ -46,7 +46,7 @@ class TransactionController extends Controller
     public function show($id)
     {
         try {
-            $transaction = Transaction::with(['user', 'car', 'discount'])->findOrFail($id);
+            $transaction = Transaction::with(['user.profile', 'items'])->findOrFail($id);
             return Inertia::render('Transaction/Detail', compact('transaction'));
         } catch (\Exception $e) {
             Log::error('Error loading transaction detail: ' . $e->getMessage());

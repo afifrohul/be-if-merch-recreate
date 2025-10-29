@@ -38,19 +38,9 @@ type Transaction = {
     invoice_number: string;
     total_amount: number;
     status: string;
-    payment_method?: string;
     payment_status: string;
-    payment_type: string;
-    paid_at?: string;
-    canceled_at?: string;
-    completed_at?: string;
-    text?: string;
-    midtrans_payload?: string;
-    midtrans_order_id?: string;
-    midtrans_transaction_id?: string;
-    midtrans_snap_token?: string;
     user: User;
-    items: Item;
+    items: Item[];
 };
 
 interface TransactionProps {
@@ -87,9 +77,11 @@ export default function Pending({ transactions }: TransactionProps) {
             header: 'Payment Status',
             cell: ({ row }) => (
                 <div className="w-fit rounded border border-orange-300 bg-orange-50 px-1.5 py-0.5">
-                    <div className="flex items-center gap-1 text-xs font-medium text-orange-500">
-                        <FiLoader className="h-4" /> Waiting
-                    </div>
+                    {row.original.payment_status === 'waiting' ? (
+                        <div className="flex items-center gap-1 text-xs font-medium text-orange-500">
+                            <FiLoader className="h-4" /> Waiting
+                        </div>
+                    ) : null}
                 </div>
             ),
         },
@@ -98,9 +90,11 @@ export default function Pending({ transactions }: TransactionProps) {
             header: 'Transaction Status',
             cell: ({ row }) => (
                 <div className="w-fit rounded border border-orange-300 bg-orange-50 px-1.5 py-0.5">
-                    <div className="flex items-center gap-1 text-xs font-medium text-orange-500">
-                        <FiLoader className="h-4" /> Pending
-                    </div>
+                    {row.original.status === 'pending' ? (
+                        <div className="flex items-center gap-1 text-xs font-medium text-orange-500">
+                            <FiLoader className="h-4" /> Pending
+                        </div>
+                    ) : null}
                 </div>
             ),
         },

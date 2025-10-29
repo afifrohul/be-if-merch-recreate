@@ -39,19 +39,9 @@ type Transaction = {
     invoice_number: string;
     total_amount: number;
     status: string;
-    payment_method?: string;
     payment_status: string;
-    payment_type: string;
-    paid_at?: string;
-    canceled_at?: string;
-    completed_at?: string;
-    text?: string;
-    midtrans_payload?: string;
-    midtrans_order_id?: string;
-    midtrans_transaction_id?: string;
-    midtrans_snap_token?: string;
     user: User;
-    items: Item;
+    items: Item[];
 };
 
 interface TransactionProps {
@@ -59,7 +49,6 @@ interface TransactionProps {
 }
 
 export default function Success({ transactions }: TransactionProps) {
-    console.log(transactions);
     const columns: ColumnDef<Transaction>[] = [
         {
             accessorKey: 'user.name',
@@ -89,9 +78,11 @@ export default function Success({ transactions }: TransactionProps) {
             header: 'Payment Status',
             cell: ({ row }) => (
                 <div className="w-fit rounded border border-green-300 bg-green-50 px-1.5 py-0.5">
-                    <div className="flex items-center gap-1 text-xs font-medium text-green-500">
-                        <RiMoneyDollarCircleLine className="h-4" /> Paid
-                    </div>
+                    {row.original.payment_status === 'paid' ? (
+                        <div className="flex items-center gap-1 text-xs font-medium text-green-500">
+                            <RiMoneyDollarCircleLine className="h-4" /> Paid
+                        </div>
+                    ) : null}
                 </div>
             ),
         },
@@ -121,7 +112,6 @@ export default function Success({ transactions }: TransactionProps) {
                         onClick={() =>
                             router.visit(`/transaction/${row.original.id}/show`)
                         }
-                        // className="px-2 text-xs"
                         size="sm"
                     >
                         Detail

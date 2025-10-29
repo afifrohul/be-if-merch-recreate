@@ -41,19 +41,9 @@ type Transaction = {
     invoice_number: string;
     total_amount: number;
     status: string;
-    payment_method?: string;
     payment_status: string;
-    payment_type: string;
-    paid_at?: string;
-    canceled_at?: string;
-    completed_at?: string;
-    text?: string;
-    midtrans_payload?: string;
-    midtrans_order_id?: string;
-    midtrans_transaction_id?: string;
-    midtrans_snap_token?: string;
     user: User;
-    items: Item;
+    items: Item[];
 };
 
 interface TransactionProps {
@@ -61,7 +51,6 @@ interface TransactionProps {
 }
 
 export default function Failed({ transactions }: TransactionProps) {
-    console.log(transactions);
     const columns: ColumnDef<Transaction>[] = [
         {
             accessorKey: 'user.name',
@@ -90,21 +79,18 @@ export default function Failed({ transactions }: TransactionProps) {
             accessorKey: 'payment_status',
             header: 'Payment Status',
             cell: ({ row }) => (
-                <div className="w-fit rounded border font-medium border-red-300 bg-red-50 text-red-500 px-1.5 py-0.5">
+                <div className="w-fit rounded border border-red-300 bg-red-50 px-1.5 py-0.5 font-medium text-red-500">
                     {row.original.payment_status === 'failed' ? (
                         <div className="flex items-center gap-1 text-xs">
-                            <BsExclamationCircle className="h-4" />{' '}
-                            Failed
+                            <BsExclamationCircle className="h-4" /> Failed
                         </div>
                     ) : row.original.payment_status === 'expired' ? (
                         <div className="flex items-center gap-1 text-xs">
-                            <TbClockExclamation className="h-4" />{' '}
-                            Expired
+                            <TbClockExclamation className="h-4" /> Expired
                         </div>
                     ) : row.original.payment_status === 'refunded' ? (
                         <div className="flex items-center gap-1 text-xs">
-                            <RiRefund2Line className="h-4" />{' '}
-                            Refunded
+                            <RiRefund2Line className="h-4" /> Refunded
                         </div>
                     ) : null}
                 </div>
@@ -115,9 +101,11 @@ export default function Failed({ transactions }: TransactionProps) {
             header: 'Transaction Status',
             cell: ({ row }) => (
                 <div className="w-fit rounded border border-red-300 bg-red-50 px-1.5 py-0.5">
-                    <div className="flex items-center gap-1 text-xs font-medium text-red-500">
-                        <RxCrossCircled className="h-4" /> Canceled
-                    </div>
+                    {row.original.status === 'canceled' ? (
+                        <div className="flex items-center gap-1 text-xs font-medium text-red-500">
+                            <RxCrossCircled className="h-4" /> Canceled
+                        </div>
+                    ) : null}
                 </div>
             ),
         },
