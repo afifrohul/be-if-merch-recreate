@@ -15,7 +15,7 @@ class TransactionController extends Controller
     public function pending()
     {
         try {
-            $transactions = Transaction::with(['user', 'items'])->where('payment_status', 'waiting')->latest()->get();
+            $transactions = Transaction::with(['user', 'items'])->where('status', 'pending')->where('payment_status', 'waiting')->latest()->get();
             return Inertia::render('Transaction/Pending', compact('transactions'));
         } catch (\Exception $e) {
             Log::error('Error loading transactions: ' . $e->getMessage());
@@ -25,7 +25,7 @@ class TransactionController extends Controller
     public function failed()
     {
         try {
-            $transactions = Transaction::with(['user'])->where('payment_status', 'failed')->latest()->get();
+            $transactions = Transaction::with(['user', 'items'])->where('status', 'canceled')->orWhereIn('payment_status', ['failed', 'expired', 'refunded'])->latest()->get();
             return Inertia::render('Transaction/Failed', compact('transactions'));
         } catch (\Exception $e) {
             Log::error('Error loading transactions: ' . $e->getMessage());
@@ -35,7 +35,7 @@ class TransactionController extends Controller
     public function success()
     {
         try {
-            $transactions = Transaction::with(['user'])->where('payment_status', 'success')->latest()->get();
+            $transactions = Transaction::with(['user', 'items'])->whereIn('status', ['paid', 'completed'])->where('payment_status', 'paid')->latest()->get();
             return Inertia::render('Transaction/Success', compact('transactions'));
         } catch (\Exception $e) {
             Log::error('Error loading transactions: ' . $e->getMessage());

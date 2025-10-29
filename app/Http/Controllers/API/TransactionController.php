@@ -124,7 +124,6 @@ class TransactionController extends Controller
 
             $transaction->update([
                 'midtrans_snap_token' => $snap->token,
-                'midtrans_payload' => json_encode($payload),
             ]);
 
             DB::commit();
@@ -177,20 +176,20 @@ class TransactionController extends Controller
             return response()->json(['message' => 'Transaction not found'], 404);
         }
 
-        // Verifikasi signature (opsional tapi disarankan)
-        $serverKey = config('midtrans.server_key');
-        $hashed = hash('sha512', $orderId . $notif->status_code . $notif->gross_amount . $serverKey);
-        if ($signatureKey && $hashed !== $signatureKey) {
-            Log::error('Invalid signature for transaction: ' . $orderId);
-            return response()->json(['message' => 'Invalid signature'], 403);
-        }
+        $transaction->payment_method = $notif->issuer ?? null;
+        $transaction->payment_type = $notif->payment_type ?? null;
+        $transaction->paid_at = $notif->transaction_time ?? now();
+        $transaction->midtrans_transaction_id = $notif->transaction_id ?? null;
+        $transaction->midtrans_payload = $request->all();
 
-        // Update status berdasarkan transaction_status
         switch ($transactionStatus) {
             case 'capture':
                 if ($paymentType == 'credit_card') {
                     if ($fraudStatus == 'challenge') {
-                        $transaction->update(['payment_status' => 'challenge']);
+                        $transaction->update([
+                            'payment_status' => 'challenge',
+                            'status' => 'pending',
+                        ]);
                     } else {
                         $transaction->update([
                             'payment_status' => 'paid',
@@ -203,26 +202,46 @@ class TransactionController extends Controller
             case 'settlement':
                 $transaction->update([
                     'payment_status' => 'paid',
-                    'status' => 'completed',
+                    'status' => 'paid',
                 ]);
                 break;
 
             case 'pending':
-                $transaction->update(['payment_status' => 'waiting']);
+                $transaction->update([
+                    'payment_status' => 'waiting',
+                    'status' => 'pending',
+                ]);
                 break;
 
             case 'deny':
-                $transaction->update(['payment_status' => 'denied']);
+                $transaction->update([
+                    'payment_status' => 'failed',
+                    'status' => 'canceled',
+                ]);
                 break;
 
             case 'expire':
-                $transaction->update(['payment_status' => 'expired']);
+                $transaction->update([
+                    'payment_status' => 'expired',
+                    'status' => 'canceled',
+                ]);
                 break;
 
             case 'cancel':
-                $transaction->update(['payment_status' => 'canceled']);
+                $transaction->update([
+                    'payment_status' => 'failed',
+                    'status' => 'canceled',
+                ]);
+                break;
+
+            case 'refund':
+                $transaction->update([
+                    'payment_status' => 'refunded',
+                    'status' => 'canceled',
+                ]);
                 break;
         }
+
 
         return response()->json([
             'message' => 'Callback received successfully',

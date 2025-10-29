@@ -58,7 +58,6 @@ interface TransactionProps {
 }
 
 export default function Pending({ transactions }: TransactionProps) {
-    console.log(transactions);
     const columns: ColumnDef<Transaction>[] = [
         {
             accessorKey: 'user.name',
@@ -88,8 +87,19 @@ export default function Pending({ transactions }: TransactionProps) {
             header: 'Payment Status',
             cell: ({ row }) => (
                 <div className="w-fit rounded border border-orange-300 bg-orange-50 px-1.5 py-0.5">
-                    <div className="flex items-center gap-1 text-xs text-orange-500 font-medium">
+                    <div className="flex items-center gap-1 text-xs font-medium text-orange-500">
                         <FiLoader className="h-4" /> Waiting
+                    </div>
+                </div>
+            ),
+        },
+        {
+            accessorKey: 'status',
+            header: 'Transaction Status',
+            cell: ({ row }) => (
+                <div className="w-fit rounded border border-orange-300 bg-orange-50 px-1.5 py-0.5">
+                    <div className="flex items-center gap-1 text-xs font-medium text-orange-500">
+                        <FiLoader className="h-4" /> Pending
                     </div>
                 </div>
             ),
