@@ -23,8 +23,8 @@ return new class extends Migration
             $table->string('sku')->nullable();
 
             $table->decimal('price', 15, 2);
-            $table->decimal('discount_amount', 15, 2)->default(0);
-            $table->decimal('final_price', 15, 2);
+            // $table->decimal('discount_amount', 15, 2)->default(0);
+            // $table->decimal('final_price', 15, 2);
             $table->integer('quantity');
             $table->decimal('subtotal', 15, 2);
 

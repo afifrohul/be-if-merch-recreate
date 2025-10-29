@@ -6,6 +6,7 @@ use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\FAQController;
 use App\Http\Controllers\API\ProductCategoryController;
 use App\Http\Controllers\API\ProductController;
+use App\Http\Controllers\API\TransactionController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -21,3 +22,12 @@ Route::get('/product-categories', [ProductCategoryController::class, 'index']);
 
 Route::get('/products', [ProductController::class, 'index']);
 Route::get('/product/{id}', [ProductController::class, 'show']);
+
+Route::middleware(['auth:sanctum'])->group(function () {
+    
+    Route::get('/transactions', [TransactionController::class, 'index']);
+    Route::get('/transactions/{id}', [TransactionController::class, 'show']);
+    Route::post('/transactions', [TransactionController::class, 'store']);
+});
+
+Route::post('/midtrans/callback', [TransactionController::class, 'callback']);

@@ -16,6 +16,9 @@ import {
     BookImage,
     Box,
     Briefcase,
+    FileCheck2Icon,
+    FileClockIcon,
+    FileX2Icon,
     LayoutGrid,
     ShoppingCart,
     TableOfContents,
@@ -55,6 +58,24 @@ const mainNavItems: NavItem[] = [
     },
 ];
 
+const transactions = [
+    {
+        title: 'Pending Transactions',
+        href: '/pending-transactions',
+        icon: FileClockIcon,
+    },
+    {
+        title: 'Failed Transactions',
+        href: '/failed-transactions',
+        icon: FileX2Icon,
+    },
+    {
+        title: 'Success Transactions',
+        href: '/success-transactions',
+        icon: FileCheck2Icon,
+    },
+];
+
 export function AppSidebar() {
     return (
         <Sidebar collapsible="icon" variant="sidebar">
@@ -71,7 +92,8 @@ export function AppSidebar() {
             </SidebarHeader>
 
             <SidebarContent>
-                <NavMain items={mainNavItems} />
+                <NavMain items={mainNavItems} header="Master Data" />
+                <NavMain items={transactions} header="Transactions" />
             </SidebarContent>
 
             <SidebarFooter>
