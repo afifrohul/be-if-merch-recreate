@@ -71,7 +71,13 @@ export default function Success({ transactions }: TransactionProps) {
         {
             accessorKey: 'total_amount',
             header: 'Total Amount (Rp)',
-            cell: (info) => info.getValue(),
+            cell: (info) => {
+                const total_amount = info.getValue() as number;
+                return new Intl.NumberFormat('id-ID', {
+                    style: 'currency',
+                    currency: 'IDR',
+                }).format(total_amount);
+            },
         },
         {
             accessorKey: 'payment_status',

@@ -319,16 +319,22 @@ export default function Detail({ transaction }: TransactionProps) {
                                                 {item.quantity}
                                             </td>
                                             <td className="py-2 text-right">
-                                                Rp
-                                                {item.price.toLocaleString(
+                                                {new Intl.NumberFormat(
                                                     'id-ID',
-                                                )}
+                                                    {
+                                                        style: 'currency',
+                                                        currency: 'IDR',
+                                                    },
+                                                ).format(item.price)}
                                             </td>
                                             <td className="py-2 text-right font-medium">
-                                                Rp
-                                                {item.subtotal.toLocaleString(
+                                                {new Intl.NumberFormat(
                                                     'id-ID',
-                                                )}
+                                                    {
+                                                        style: 'currency',
+                                                        currency: 'IDR',
+                                                    },
+                                                ).format(item.subtotal)}
                                             </td>
                                         </tr>
                                     ))}
@@ -337,7 +343,11 @@ export default function Detail({ transaction }: TransactionProps) {
                             <Separator className="my-4"></Separator>
                             <div className="w-full">
                                 <p className="text-right text-sm font-semibold">
-                                    Total: Rp{transaction.total_amount}
+                                    Total:{' '}
+                                    {new Intl.NumberFormat('id-ID', {
+                                        style: 'currency',
+                                        currency: 'IDR',
+                                    }).format(transaction.total_amount)}
                                 </p>
                             </div>
                         </div>
