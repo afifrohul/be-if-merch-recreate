@@ -4,6 +4,7 @@ import AppLayout from '@/layouts/app-layout';
 import { BreadcrumbItem } from '@/types';
 import { Head, router } from '@inertiajs/react';
 import { ColumnDef } from '@tanstack/react-table';
+import { format } from 'date-fns';
 import { FaRegCircleCheck } from 'react-icons/fa6';
 import { RiMoneyDollarCircleLine } from 'react-icons/ri';
 
@@ -40,6 +41,7 @@ type Transaction = {
     total_amount: number;
     status: string;
     payment_status: string;
+    created_at: string;
     user: User;
     items: Item[];
 };
@@ -108,6 +110,17 @@ export default function Success({ transactions }: TransactionProps) {
                     ) : null}
                 </div>
             ),
+        },
+        {
+            accessorKey: 'created_at',
+            header: 'Issued Date',
+            cell: ({ row }) => {
+                const issued = format(
+                    new Date(row.original.created_at),
+                    'MMMM dd, yyyy H:ii:ss',
+                );
+                return issued;
+            },
         },
         {
             id: 'actions',
