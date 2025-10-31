@@ -30,7 +30,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/profile', [ProfileController::class, 'store']);
     
     Route::get('/transactions', [TransactionController::class, 'index']);
-    Route::get('/transactions/{id}', [TransactionController::class, 'show']);
+    Route::get('/transaction/{id}', [TransactionController::class, 'show']);
     Route::post('/transactions', [TransactionController::class, 'store']);
 });
 

@@ -21,6 +21,7 @@ import {
     FileX2Icon,
     LayoutGrid,
     ShoppingCart,
+    SquareDashedBottomCodeIcon,
     TableOfContents,
 } from 'lucide-react';
 import AppLogo from './app-logo';
@@ -76,6 +77,14 @@ const transactions = [
     },
 ];
 
+const apis = [
+    {
+        title: 'Documentation API',
+        href: '/docs/api',
+        icon: SquareDashedBottomCodeIcon,
+    },
+];
+
 export function AppSidebar() {
     return (
         <Sidebar collapsible="icon" variant="sidebar">
@@ -94,6 +103,7 @@ export function AppSidebar() {
             <SidebarContent>
                 <NavMain items={mainNavItems} header="Master Data" />
                 <NavMain items={transactions} header="Transactions" />
+                <NavMain items={apis} header="Documentation API" />
             </SidebarContent>
 
             <SidebarFooter>

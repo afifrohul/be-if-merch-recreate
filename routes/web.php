@@ -9,6 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductVariantController;
 use App\Http\Controllers\ProductGalleryController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\DocumentationAPIController;
 use Inertia\Inertia;
 
 Route::get('/', function () {
@@ -55,11 +56,13 @@ Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
     Route::put('/faqs/{id}', [FAQController::class, 'update'])->name('faqs.update');
     Route::delete('/faqs/{id}', [FAQController::class, 'destroy'])->name('faqs.destroy');
     Route::get('/faqs', [FAQController::class, 'index'])->name('faqs.index');
-
+    
     Route::get('/pending-transactions', [TransactionController::class, 'pending'])->name('transaction.pending');
     Route::get('/failed-transactions', [TransactionController::class, 'failed'])->name('transaction.failed');
     Route::get('/success-transactions', [TransactionController::class, 'success'])->name('transaction.success');
     Route::get('/transaction/{id}/show', [TransactionController::class, 'show'])->name('transaction.show');
+    
+    Route::get('/docs/api', [DocumentationAPIController::class, 'index'])->name('apis.index');
 
 });
 
