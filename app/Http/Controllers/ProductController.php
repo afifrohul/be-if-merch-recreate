@@ -16,7 +16,7 @@ class ProductController extends Controller
     public function index()
     {
         try {
-            $products = Product::with('category')->latest()->get();
+            $products = Product::with('category', 'variants', 'galleries')->latest()->get();
             return Inertia::render('Product/Index', compact('products'));
         } catch (\Exception $e) {
             Log::error('Error loading products: ' . $e->getMessage());

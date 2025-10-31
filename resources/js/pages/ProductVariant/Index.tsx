@@ -47,7 +47,13 @@ export default function ProductVariantIndex({
         {
             accessorKey: 'price',
             header: 'Price',
-            cell: (info) => `IDR ${info.getValue()}`,
+            cell: ({ row }) => {
+                const priceIDR = new Intl.NumberFormat('id-ID', {
+                    style: 'currency',
+                    currency: 'IDR',
+                }).format(row.original.price);
+                return priceIDR;
+            },
         },
         {
             accessorKey: 'stock',

@@ -15,6 +15,16 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
+type Galleries = {
+    id: number;
+    image: string;
+};
+
+type Variants = {
+    id: number;
+    name: string;
+};
+
 type Product = {
     id: number;
     product_category_id: number;
@@ -22,6 +32,8 @@ type Product = {
     name: string;
     description: string;
     status: 'released' | 'unreleased';
+    variants: Variants[];
+    galleries: Galleries[];
 };
 
 interface ProductIndexProps {
@@ -38,7 +50,7 @@ export default function Index({ products }: ProductIndexProps) {
                     <img
                         src={`/storage/${row.original.image}`}
                         alt={`${row.original.id}-image`}
-                        className="h-16"
+                        className="w-16"
                     />
                 </div>
             ),
@@ -51,12 +63,34 @@ export default function Index({ products }: ProductIndexProps) {
         {
             accessorKey: 'description',
             header: 'Description',
-            cell: (info) => info.getValue(),
+            cell: ({ row }) => {
+                const desc =
+                    row.original.description?.length > 100
+                        ? row.original.description.substring(0, 100) + '...'
+                        : row.original.description || '-';
+                return desc;
+            },
         },
         {
             accessorKey: 'category.name',
             header: 'Category',
             cell: (info) => info.getValue(),
+        },
+        {
+            accessorKey: 'variants',
+            header: 'Number of Variants',
+            cell: (info) => {
+                const variants = info.getValue() as Variants[] | undefined;
+                return variants ? variants.length : 0;
+            },
+        },
+        {
+            accessorKey: 'galleries',
+            header: 'Number of Galleries',
+            cell: (info) => {
+                const galleries = info.getValue() as Galleries[] | undefined;
+                return galleries ? galleries.length : 0;
+            },
         },
         {
             accessorKey: 'status',

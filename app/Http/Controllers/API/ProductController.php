@@ -15,7 +15,7 @@ class ProductController extends Controller
     {
         $search = $request->get('search');
 
-        $products = Product::with(['category']);
+        $products = Product::with(['category', 'variants', 'galleries'])->where('status', 'released');
 
         if ($search) {
             $products->where('name', 'like', '%' . $search . '%');
