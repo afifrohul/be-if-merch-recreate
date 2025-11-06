@@ -1,7 +1,7 @@
 import AppLayout from '@/layouts/app-layout';
 import { type BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/react';
-// @ts-ignore: missing declaration for 'swagger-ui-react'
+// @ts-expect-error: missing declaration for 'swagger-ui-react'
 import SwaggerUI from 'swagger-ui-react';
 import 'swagger-ui-react/swagger-ui.css';
 
