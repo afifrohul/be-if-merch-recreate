@@ -15,7 +15,7 @@ class ProductController extends Controller
     {
         $search = $request->get('search');
 
-        $products = Product::with(['category', 'variants'])->where('status', 'released');
+        $products = Product::with(['category', 'variants'])->where('status', 'released')->orderBy('name', 'asc');
 
         if ($search) {
             $products->where('name', 'like', '%' . $search . '%');
@@ -38,7 +38,7 @@ class ProductController extends Controller
             'status' => $product->status,
             'created_at' => $product->created_at,
             'updated_at' => $product->updated_at,
-            'category' => $product->category,
+            'category' => $product->category->name,
             'price' => optional($product->variants->first())->price,
         ];
     });
