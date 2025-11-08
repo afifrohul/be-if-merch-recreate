@@ -23,10 +23,6 @@ class ProductController extends Controller
 
         $products = $products->get();
 
-        if ($products->isEmpty()) {
-            return $this->errorResponse('No products found.', null, 404);
-        }
-
         $products = $products->map(function ($product) {
         return [
             'id' => $product->id,
@@ -46,13 +42,27 @@ class ProductController extends Controller
     return $this->successResponse($products, 'Products fetched successfully.');
     }
 
-    public function show($id)
+    public function show($slug)
     {
-        $product = Product::with(['category', 'variants', 'galleries'])->find($id);
+        $product = Product::with(['category', 'variants', 'galleries'])->where('slug', $slug)->first();
 
         if (!$product) {
             return $this->errorResponse('Product not found.', null, 404);
         }
+
+        $product = [
+            'id' => $product->id,
+            'name' => $product->name,
+            'slug' => $product->slug,
+            'description' => $product->description,
+            'status' => $product->status,
+            'category' => $product->category->name ?? null,
+            'image' => $product->image,
+            'variants' => $product->variants,
+            'galleries' => $product->galleries,
+            'created_at' => $product->created_at,
+            'updated_at' => $product->updated_at,
+        ];
 
         return $this->successResponse($product, 'Product fetched successfully.');
     }
