@@ -31,15 +31,22 @@ class ProfileController extends Controller
 
         try {
             
-            $profile = new Profile();
-            $profile->user_id = $user->id;
-            $profile->gender = $request->gender;
-            $profile->address = $request->address;
-            $profile->phone_number = $request->phone_number;
-            $profile->save();
+            \DB::table('profiles')->updateOrInsert(
+                ['user_id' => $user->id],
+                [
+                    'gender' => $request->gender,
+                    'address' => $request->address,
+                    'phone_number' => $request->phone_number,
+                    'updated_at' => now(),
+                    'created_at' => now(),
+                ]
+            );
+
+            $user = User::with('profile')->find($user->id);
     
             return response()->json([
-                'message' => 'Profile created successfully'
+                'message' => 'Profile updated successfully',
+                'user' => $user,
             ]);
         } catch (\Throwable $th) {
             return response()->json([
@@ -47,7 +54,5 @@ class ProfileController extends Controller
                 'error' => $th->getMessage(),
             ], 500);
         }
-
-
     }
 }
