@@ -6,6 +6,7 @@ use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\FAQController;
 use App\Http\Controllers\API\ProductCategoryController;
 use App\Http\Controllers\API\ProductController;
+use App\Http\Controllers\API\CartController;
 use App\Http\Controllers\API\TransactionController;
 use App\Http\Controllers\API\ProfileController;
 
@@ -29,6 +30,10 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/user', [ProfileController::class, 'index']);
     Route::post('/profile', [ProfileController::class, 'store']);
     
+    Route::get('/cart', [CartController::class, 'index']);
+    Route::post('/cart', [CartController::class, 'store']);
+    Route::delete('/cart/{id}', [CartController::class, 'destroy']);
+
     Route::get('/transactions', [TransactionController::class, 'index']);
     Route::get('/transaction/{id}', [TransactionController::class, 'show']);
     Route::post('/transactions', [TransactionController::class, 'store']);
