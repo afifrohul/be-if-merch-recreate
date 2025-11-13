@@ -53,7 +53,11 @@ class AuthController extends Controller
         // Hapus token lama (opsional, supaya 1 device = 1 token)
         $user->tokens()->delete();
 
-        $token = $user->createToken('api-token')->plainTextToken;
+        $token = $user->createToken(
+                    'api-token',
+                    ['*'], 
+                    now()->addHours(12)
+                )->plainTextToken;
 
         return response()->json([
             'message' => 'Login success',
