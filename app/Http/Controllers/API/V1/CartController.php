@@ -22,7 +22,8 @@ class CartController extends Controller
     {
         $request->validate([
             'product_id' => 'required',
-            'product_variant_id' => 'required'
+            'product_variant_id' => 'required',
+            'quantity' => 'required'
         ]);
 
         $user = Auth::user();
@@ -33,6 +34,7 @@ class CartController extends Controller
             $cart->user_id = $user->id;
             $cart->product_id = $request->product_id;
             $cart->product_variant_id = $request->product_variant_id;
+            $cart->quantity = $request->quantity;
             $cart->save();
 
             return response()->json([
@@ -42,6 +44,46 @@ class CartController extends Controller
         } catch (\Throwable $th) {
             return response()->json([
                 'message' => 'Failed to add to cart',
+                'error' => $th->getMessage(),
+            ], 500);
+        }
+    }
+
+    public function updateCheck(Request $request, $id)
+    {
+        try {
+            $cart = Cart::findOrFail($id);
+            $cart->is_checked = true;
+            $cart->save();
+
+            return response()->json([
+                'message' => 'Cart successfully updated',
+            ]);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'message' => 'Failed to update cart',
+                'error' => $th->getMessage(),
+            ], 500);
+        }
+    }
+
+    public function updateQty(Request $request, $id)
+    {
+        $request->validate([
+            'quantity' => 'required'
+        ]);
+
+        try {
+            $cart = Cart::findOrFail($id);
+            $cart->quantity = $request->quantity;
+            $cart->save();
+
+            return response()->json([
+                'message' => 'Cart successfully updated',
+            ]);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'message' => 'Failed to update cart',
                 'error' => $th->getMessage(),
             ], 500);
         }

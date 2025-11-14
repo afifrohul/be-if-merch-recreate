@@ -29,6 +29,8 @@ Route::prefix('V1')->group(function () {
         
         Route::get('/cart', [CartController::class, 'index']);
         Route::post('/cart', [CartController::class, 'store']);
+        Route::put('/update-check/{id}', [CartController::class, 'updateCheck']);
+        Route::put('/update-qty/{id}', [CartController::class, 'updateQty']);
         Route::delete('/cart/{id}', [CartController::class, 'destroy']);
     
         Route::get('/transactions', [TransactionController::class, 'index']);
