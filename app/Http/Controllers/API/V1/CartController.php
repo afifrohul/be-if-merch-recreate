@@ -53,7 +53,13 @@ class CartController extends Controller
     {
         try {
             $cart = Cart::findOrFail($id);
-            $cart->is_checked = true;
+
+            if ( $cart->is_checked == false) {
+                $cart->is_checked = true;
+            } else {
+                $cart->is_checked = false;
+            }
+
             $cart->save();
 
             return response()->json([
