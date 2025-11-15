@@ -13,19 +13,21 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Midtrans\Notification;
 use Midtrans\Config;
+use App\Traits\ApiResponseTrait;
 
 class TransactionController extends Controller
 {
+    use ApiResponseTrait;
     public function index()
     {
         $transactions = Transaction::with(['items'])->where('user_id', Auth::id())->latest()->get();
-        return response()->json($transactions);
+        return $this->successResponse($transactions, 'Transactions fetched succesfully');
     }
 
     public function show($id)
     {
         $transaction = Transaction::with(['items'])->where('user_id', Auth::id())->findOrFail($id);
-        return response()->json($transaction);
+        return $this->successResponse($transaction, 'Transactions detail fetched succesfully');
     }
 
     public function store(Request $request, MidtransService $midtrans)
@@ -34,6 +36,7 @@ class TransactionController extends Controller
             'items' => 'required|array|min:1',
             'items.*.product_variant_id' => 'required|integer|exists:product_variants,id',
             'items.*.quantity' => 'required|integer|min:1',
+            'note'=> 'required'
         ]);
 
         $user = Auth::user();
@@ -76,6 +79,7 @@ class TransactionController extends Controller
                 'status' => 'pending',
                 'payment_status' => 'waiting',
                 'midtrans_order_id' => 'ORDER-' . strtoupper(Str::random(10)),
+                'notes' => 'The items were sent to ' . $request->note,
             ]);
 
             // buat transaction items
@@ -85,11 +89,12 @@ class TransactionController extends Controller
 
                 \App\Models\TransactionItem::create([
                     'transaction_id' => $transaction->id,
-                    'product_id' => $product->id ?? null,
+                    'product_id' => $product->id,
                     'product_variant_id' => $variant->id,
+                    'product_image' => $product->image,
                     'product_name' => $product->name,
-                    'variant_name' => $variant->name ?? null,
-                    'sku' => $variant->sku ?? null,
+                    'variant_name' => $variant->name,
+                    'sku' => $variant->sku,
                     'price' => $variant->price,
                     'quantity' => $item['quantity'],
                     'subtotal' => $item['subtotal'],

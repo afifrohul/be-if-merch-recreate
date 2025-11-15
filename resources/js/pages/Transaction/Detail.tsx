@@ -64,7 +64,7 @@ type Transaction = {
     paid_at?: string;
     canceled_at?: string;
     completed_at?: string;
-    text?: string;
+    notes?: string;
     midtrans_payload?: string;
     midtrans_order_id?: string;
     midtrans_transaction_id?: string;
@@ -114,17 +114,17 @@ export default function Detail({ transaction }: TransactionProps) {
                                 </div>
                                 <div className="flex justify-between text-sm">
                                     <p className="font-semibold">
-                                        Customer Address
-                                    </p>
-                                    <p>{transaction.user.profile.address}</p>
-                                </div>
-                                <div className="flex justify-between text-sm">
-                                    <p className="font-semibold">
                                         Customer Phone Number
                                     </p>
                                     <p>
                                         {transaction.user.profile.phone_number}
                                     </p>
+                                </div>
+                                <div className="flex flex-col text-sm gap-2">
+                                    <p className="font-semibold">
+                                        Deliver Address
+                                    </p>
+                                    <p>{transaction.user.profile.address}</p>
                                 </div>
                             </div>
                             <div className="space-y-2">

@@ -18,9 +18,10 @@ return new class extends Migration
             $table->foreignId('product_id')->nullable()->constrained()->nullOnDelete();
             $table->foreignId('product_variant_id')->nullable()->constrained()->nullOnDelete();
 
+            $table->string('product_image');
             $table->string('product_name');
-            $table->string('variant_name')->nullable();
-            $table->string('sku')->nullable();
+            $table->string('variant_name');
+            $table->string('sku');
 
             $table->decimal('price', 15, 2);
             // $table->decimal('discount_amount', 15, 2)->default(0);

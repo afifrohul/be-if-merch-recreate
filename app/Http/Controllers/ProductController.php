@@ -109,9 +109,6 @@ class ProductController extends Controller
             $product = Product::findOrFail($id);
 
             if ($request->hasFile('image')) {
-                if ($product->image && \Storage::disk('public')->exists($product->image)) {
-                    \Storage::disk('public')->delete($product->image);
-                }
 
                 $file =  $request->file('image');
                 $filename = now()->format('Ymd_His') . '_' . \Str::random(8) . '.' . $file->getClientOriginalExtension();
@@ -149,11 +146,6 @@ class ProductController extends Controller
     {
         try {
             $product = Product::findOrFail($id);
-
-            if ($product->image && \Storage::disk('public')->exists($product->image)) {
-                \Storage::disk('public')->delete($product->image);
-            }
-
             $product->delete();
             
             return redirect()->route('products.index')->with('success', 'Product deleted successfully.');
