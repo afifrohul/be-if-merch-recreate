@@ -32,10 +32,13 @@ Route::prefix('V1')->group(function () {
         Route::put('/update-check/{id}', [CartController::class, 'updateCheck']);
         Route::put('/update-qty/{id}', [CartController::class, 'updateQty']);
         Route::delete('/cart/{id}', [CartController::class, 'destroy']);
-    
+        
         Route::get('/transactions', [TransactionController::class, 'index']);
         Route::get('/transaction/{id}', [TransactionController::class, 'show']);
         Route::post('/transactions', [TransactionController::class, 'store']);
+        Route::put('/update-cancel/{id}', [TransactionController::class, 'cancel']);
+        Route::put('/update-complete/{id}', [TransactionController::class, 'complete']);
+        
     });
     
     Route::post('/midtrans/callback', [TransactionController::class, 'callback']);

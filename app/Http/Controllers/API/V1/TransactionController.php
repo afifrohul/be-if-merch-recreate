@@ -105,6 +105,10 @@ class TransactionController extends Controller
                 ]);
             }
 
+            $cart = \App\Models\Cart::where('user_id', $user->id)
+                ->whereIn('product_variant_id', $variantIds)
+                ->delete();
+
             // buat payload untuk Midtrans
             $payload = [
                 'transaction_details' => [
@@ -143,6 +147,48 @@ class TransactionController extends Controller
             DB::rollBack();
             return response()->json([
                 'message' => 'Failed to create transaction',
+                'error' => $th->getMessage(),
+            ], 500);
+        }
+    }
+
+    public function cancel($id)
+    {
+
+        try {
+            $transaction = Transaction::findOrFail($id);
+
+            $transaction->status = 'canceled';
+            $transaction->payment_status = 'failed';
+            $transaction->canceled_at = now();
+            $transaction->save();
+
+            return response()->json([
+                'message' => 'Transaction successfully canceled',
+            ]);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'message' => 'Failed to cancel transaction',
+                'error' => $th->getMessage(),
+            ], 500);
+        }
+    }
+
+    public function complete($id)
+    {
+        try {
+            $transaction = Transaction::findOrFail($id);
+
+            $transaction->status = 'completed';
+            $transaction->completed_at = now();
+            $transaction->save();
+
+            return response()->json([
+                'message' => 'Transaction successfully updated',
+            ]);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'message' => 'Failed to update transaction',
                 'error' => $th->getMessage(),
             ], 500);
         }
