@@ -36,6 +36,9 @@
             "name": "products"
         },
         {
+            "name": "cart"
+        },
+        {
             "name": "transactions"
         }
     ],
@@ -50,10 +53,10 @@
                             "schema": {
                                 "type": "object",
                                 "example": {
-                                    "name": "Budi",
-                                    "email": "budi@example.com",
-                                    "password": "password123",
-                                    "password_confirmation": "password123"
+                                    "name": "Afif",
+                                    "email": "afifmemyself22@gmail.com",
+                                    "password": "password",
+                                    "password_confirmation": "password"
                                 }
                             }
                         }
@@ -107,13 +110,19 @@
                             "Date": {
                                 "schema": {
                                     "type": "string",
-                                    "example": "Fri, 31 Oct 2025 13:47:23 GMT"
+                                    "example": "Wed, 19 Nov 2025 13:24:28 GMT"
                                 }
                             },
                             "Access-Control-Allow-Origin": {
                                 "schema": {
                                     "type": "string",
-                                    "example": "*"
+                                    "example": "http://localhost:3000"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
                                 }
                             }
                         },
@@ -125,13 +134,13 @@
                                 "example": {
                                     "message": "Register success",
                                     "user": {
-                                        "name": "Budi",
-                                        "email": "budi@example.com",
-                                        "updated_at": "2025-10-31T13:47:23.000000Z",
-                                        "created_at": "2025-10-31T13:47:23.000000Z",
-                                        "id": 3
+                                        "name": "Afif",
+                                        "email": "afifmemyself22@gmail.com",
+                                        "updated_at": "2025-11-19T13:24:28.000000Z",
+                                        "created_at": "2025-11-19T13:24:28.000000Z",
+                                        "id": 9
                                     },
-                                    "token": "3|vhI6An8pYsG5xSFYnYZaPa94wiTSxumqvBNmUdGp0575e0db"
+                                    "token": "148|8M4aAdYTLSFd8cFHN5dJSuehNClzUZZi2Z4xOTlf05e276b2"
                                 }
                             }
                         }
@@ -149,8 +158,8 @@
                             "schema": {
                                 "type": "object",
                                 "example": {
-                                    "email": "budi@example.com",
-                                    "password": "password123"
+                                    "email": "afifmemyself22@gmail.com",
+                                    "password": "password"
                                 }
                             }
                         }
@@ -210,13 +219,19 @@
                             "Date": {
                                 "schema": {
                                     "type": "string",
-                                    "example": "Fri, 31 Oct 2025 13:48:09 GMT"
+                                    "example": "Wed, 19 Nov 2025 13:24:39 GMT"
                                 }
                             },
                             "Access-Control-Allow-Origin": {
                                 "schema": {
                                     "type": "string",
-                                    "example": "*"
+                                    "example": "http://localhost:3000"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
                                 }
                             },
                             "Content-Encoding": {
@@ -234,16 +249,16 @@
                                 "example": {
                                     "message": "Login success",
                                     "user": {
-                                        "id": 3,
-                                        "name": "Budi",
-                                        "email": "budi@example.com",
+                                        "id": 9,
+                                        "name": "Afif",
+                                        "email": "afifmemyself22@gmail.com",
                                         "email_verified_at": null,
                                         "two_factor_confirmed_at": null,
                                         "role": "customer",
-                                        "created_at": "2025-10-31T13:47:23.000000Z",
-                                        "updated_at": "2025-10-31T13:47:23.000000Z"
+                                        "created_at": "2025-11-19T13:24:28.000000Z",
+                                        "updated_at": "2025-11-19T13:24:28.000000Z"
                                     },
-                                    "token": "4|ICWTPF5mrO0nNAycOMoPzjyxQ0vDeNXpQjeodupL46f2af14"
+                                    "token": "149|1nDgJJQ38luffoUKCplig77EuDnpnBLAB4v1DyjSccb3b0e4"
                                 }
                             }
                         }
@@ -262,8 +277,8 @@
                                 "type": "object",
                                 "example": {
                                     "gender": "male",
-                                    "address": "JL SRIKOYO LINGK GLISAT, PATRANG, JEMBER",
-                                    "phone_number": "081515018396"
+                                    "address": "Jl SRIKOYO LINGK GLISAT RT 5 RW 4 (depan toko mundu terang), Patrang, Kab. Jember, Jawa Timur",
+                                    "phone_number": "081515018276"
                                 }
                             }
                         }
@@ -323,13 +338,19 @@
                             "Date": {
                                 "schema": {
                                     "type": "string",
-                                    "example": "Fri, 31 Oct 2025 13:48:36 GMT"
+                                    "example": "Wed, 19 Nov 2025 13:24:45 GMT"
                                 }
                             },
                             "Access-Control-Allow-Origin": {
                                 "schema": {
                                     "type": "string",
-                                    "example": "*"
+                                    "example": "http://localhost:3000"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
                                 }
                             },
                             "Content-Encoding": {
@@ -345,7 +366,26 @@
                                     "type": "object"
                                 },
                                 "example": {
-                                    "message": "Profile created successfully"
+                                    "message": "Profile updated successfully",
+                                    "user": {
+                                        "id": 9,
+                                        "name": "Afif",
+                                        "email": "afifmemyself22@gmail.com",
+                                        "email_verified_at": null,
+                                        "two_factor_confirmed_at": null,
+                                        "role": "customer",
+                                        "created_at": "2025-11-19T13:24:28.000000Z",
+                                        "updated_at": "2025-11-19T13:24:28.000000Z",
+                                        "profile": {
+                                            "id": 7,
+                                            "user_id": 9,
+                                            "gender": "male",
+                                            "address": "Jl SRIKOYO LINGK GLISAT RT 5 RW 4 (depan toko mundu terang), Patrang, Kab. Jember, Jawa Timur",
+                                            "phone_number": "081515018276",
+                                            "created_at": "2025-11-19T13:24:45.000000Z",
+                                            "updated_at": "2025-11-19T13:24:45.000000Z"
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -411,13 +451,19 @@
                             "Date": {
                                 "schema": {
                                     "type": "string",
-                                    "example": "Fri, 31 Oct 2025 13:48:49 GMT"
+                                    "example": "Wed, 19 Nov 2025 13:24:50 GMT"
                                 }
                             },
                             "Access-Control-Allow-Origin": {
                                 "schema": {
                                     "type": "string",
-                                    "example": "*"
+                                    "example": "http://localhost:3000"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
                                 }
                             },
                             "Content-Encoding": {
@@ -437,22 +483,22 @@
                                     "message": "User fetched successfully.",
                                     "data": [
                                         {
-                                            "id": 3,
-                                            "name": "Budi",
-                                            "email": "budi@example.com",
+                                            "id": 9,
+                                            "name": "Afif",
+                                            "email": "afifmemyself22@gmail.com",
                                             "email_verified_at": null,
                                             "two_factor_confirmed_at": null,
                                             "role": "customer",
-                                            "created_at": "2025-10-31T13:47:23.000000Z",
-                                            "updated_at": "2025-10-31T13:47:23.000000Z",
+                                            "created_at": "2025-11-19T13:24:28.000000Z",
+                                            "updated_at": "2025-11-19T13:24:28.000000Z",
                                             "profile": {
-                                                "id": 2,
-                                                "user_id": 3,
+                                                "id": 7,
+                                                "user_id": 9,
                                                 "gender": "male",
-                                                "address": "JL SRIKOYO LINGK GLISAT, PATRANG, JEMBER",
-                                                "phone_number": "081515018396",
-                                                "created_at": "2025-10-31T13:48:36.000000Z",
-                                                "updated_at": "2025-10-31T13:48:36.000000Z"
+                                                "address": "Jl SRIKOYO LINGK GLISAT RT 5 RW 4 (depan toko mundu terang), Patrang, Kab. Jember, Jawa Timur",
+                                                "phone_number": "081515018276",
+                                                "created_at": "2025-11-19T13:24:45.000000Z",
+                                                "updated_at": "2025-11-19T13:24:45.000000Z"
                                             }
                                         }
                                     ]
@@ -477,78 +523,9 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "headers": {
-                            "Server": {
-                                "schema": {
-                                    "type": "number",
-                                    "example": "nginx/1.25.4"
-                                }
-                            },
-                            "Content-Type": {
-                                "schema": {
-                                    "type": "string",
-                                    "example": "application/json"
-                                }
-                            },
-                            "Transfer-Encoding": {
-                                "schema": {
-                                    "type": "string",
-                                    "example": "chunked"
-                                }
-                            },
-                            "Connection": {
-                                "schema": {
-                                    "type": "string",
-                                    "example": "keep-alive"
-                                }
-                            },
-                            "Vary": {
-                                "schema": {
-                                    "type": "string",
-                                    "example": "Accept-Encoding"
-                                }
-                            },
-                            "X-Powered-By": {
-                                "schema": {
-                                    "type": "number",
-                                    "example": "PHP/8.4.13"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string",
-                                    "example": "no-cache, private"
-                                }
-                            },
-                            "Date": {
-                                "schema": {
-                                    "type": "string",
-                                    "example": "Fri, 31 Oct 2025 13:48:59 GMT"
-                                }
-                            },
-                            "Access-Control-Allow-Origin": {
-                                "schema": {
-                                    "type": "string",
-                                    "example": "*"
-                                }
-                            },
-                            "Content-Encoding": {
-                                "schema": {
-                                    "type": "string",
-                                    "example": "gzip"
-                                }
-                            }
-                        },
+                        "description": "Successful response",
                         "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object"
-                                },
-                                "example": {
-                                    "message": "Logout success"
-                                }
-                            }
+                            "application/json": {}
                         }
                     }
                 }
@@ -612,13 +589,19 @@
                             "Date": {
                                 "schema": {
                                     "type": "string",
-                                    "example": "Fri, 31 Oct 2025 13:49:34 GMT"
+                                    "example": "Wed, 19 Nov 2025 13:27:29 GMT"
                                 }
                             },
                             "Access-Control-Allow-Origin": {
                                 "schema": {
                                     "type": "string",
-                                    "example": "*"
+                                    "example": "http://localhost:3000"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
                                 }
                             },
                             "Content-Encoding": {
@@ -639,24 +622,24 @@
                                     "data": [
                                         {
                                             "id": 1,
-                                            "question": "Seperti apa bahan kaos yang digunakan?",
-                                            "answer": "Bahan kaos yang digunakan adalah Combed 24s yang merupakan sablon berkualitas 100% katun. Jenis kaos ini Bahan nya terbaik lebih adem tidak panas.",
+                                            "question": "What kind of material is used for the T-shirts?",
+                                            "answer": "The material used for the T-shirts is Combed 24s, which is a high-quality 100% cotton screen print. This type of T-shirt is made from the best material, which is cooler and not hot.",
                                             "created_at": "2025-10-31T05:38:20.000000Z",
-                                            "updated_at": "2025-10-31T05:38:20.000000Z"
+                                            "updated_at": "2025-11-06T14:56:19.000000Z"
                                         },
                                         {
                                             "id": 2,
-                                            "question": "Mengapa harus membeli produk ini?",
-                                            "answer": "Karena kami menjual dengan standart distro clothing 100% katun dengan design yang membuat kalian Progammer IT tampil lebih keren dan kece.",
+                                            "question": "Why should you buy this product?",
+                                            "answer": "Because we sell 100% cotton clothing with designs that make you IT programmers look cooler and more stylish.",
                                             "created_at": "2025-10-31T05:38:37.000000Z",
-                                            "updated_at": "2025-10-31T05:38:37.000000Z"
+                                            "updated_at": "2025-11-06T14:55:53.000000Z"
                                         },
                                         {
                                             "id": 3,
-                                            "question": "Bagaimana cara memesan melalui web ini?",
-                                            "answer": "Untuk pemesanan bisa pilih produk yang diinginkan setelah itu bisa klik buy now yang nantinya bisa langsung di arahkan ke pembayaran.",
+                                            "question": "How do I place an order through this website?",
+                                            "answer": "To place an order, select the desired product and then click “buy now,” which will redirect you to the payment page.",
                                             "created_at": "2025-10-31T05:39:32.000000Z",
-                                            "updated_at": "2025-10-31T05:39:32.000000Z"
+                                            "updated_at": "2025-11-06T14:55:21.000000Z"
                                         }
                                     ]
                                 }
@@ -669,7 +652,7 @@
         "/product-categories": {
             "get": {
                 "tags": ["product categories"],
-                "summary": "product categories",
+                "summary": "products-categories",
                 "security": [
                     {
                         "noauthAuth": []
@@ -724,13 +707,19 @@
                             "Date": {
                                 "schema": {
                                     "type": "string",
-                                    "example": "Fri, 31 Oct 2025 13:49:45 GMT"
+                                    "example": "Wed, 19 Nov 2025 13:27:41 GMT"
                                 }
                             },
                             "Access-Control-Allow-Origin": {
                                 "schema": {
                                     "type": "string",
-                                    "example": "*"
+                                    "example": "http://localhost:3000"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
                                 }
                             },
                             "Content-Encoding": {
@@ -741,11 +730,44 @@
                             }
                         },
                         "content": {
-                            "text/plain": {
+                            "application/json": {
                                 "schema": {
-                                    "type": "string"
+                                    "type": "object"
                                 },
-                                "example": "{\n    \"success\": true,\n    \"message\": \"Product categories fetched successfully.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Pakaian\",\n            \"slug\": \"pakaian\",\n            \"created_at\": \"2025-10-31T05:39:51.000000Z\",\n            \"updated_at\": \"2025-10-31T05:39:51.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Merchandise\",\n            \"slug\": \"merchandise\",\n            \"created_at\": \"2025-10-31T05:40:03.000000Z\",\n            \"updated_at\": \"2025-10-31T05:40:03.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Aksesoris\",\n            \"slug\": \"aksesoris\",\n            \"created_at\": \"2025-10-31T05:40:11.000000Z\",\n            \"updated_at\": \"2025-10-31T05:40:11.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Bundling\",\n            \"slug\": \"bundling\",\n            \"created_at\": \"2025-10-31T05:40:20.000000Z\",\n            \"updated_at\": \"2025-10-31T05:40:20.000000Z\"\n        }\n    ]\n}"
+                                "example": {
+                                    "success": true,
+                                    "message": "Product categories fetched successfully.",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": "Clothes",
+                                            "slug": "clothes",
+                                            "created_at": "2025-10-31T05:39:51.000000Z",
+                                            "updated_at": "2025-11-06T14:39:23.000000Z"
+                                        },
+                                        {
+                                            "id": 2,
+                                            "name": "Merchandise",
+                                            "slug": "merchandise",
+                                            "created_at": "2025-10-31T05:40:03.000000Z",
+                                            "updated_at": "2025-10-31T05:40:03.000000Z"
+                                        },
+                                        {
+                                            "id": 3,
+                                            "name": "Accessories",
+                                            "slug": "accessories",
+                                            "created_at": "2025-10-31T05:40:11.000000Z",
+                                            "updated_at": "2025-11-06T14:39:18.000000Z"
+                                        },
+                                        {
+                                            "id": 4,
+                                            "name": "Bundling",
+                                            "slug": "bundling",
+                                            "created_at": "2025-10-31T05:40:20.000000Z",
+                                            "updated_at": "2025-10-31T05:40:20.000000Z"
+                                        }
+                                    ]
+                                }
                             }
                         }
                     }
@@ -768,7 +790,7 @@
                         "schema": {
                             "type": "string"
                         },
-                        "example": "jacket"
+                        "example": "shirt"
                     }
                 ],
                 "responses": {
@@ -820,13 +842,349 @@
                             "Date": {
                                 "schema": {
                                     "type": "string",
-                                    "example": "Fri, 31 Oct 2025 13:49:57 GMT"
+                                    "example": "Wed, 19 Nov 2025 13:28:44 GMT"
                                 }
                             },
                             "Access-Control-Allow-Origin": {
                                 "schema": {
                                     "type": "string",
-                                    "example": "*"
+                                    "example": "http://localhost:3000"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
+                                }
+                            },
+                            "Content-Encoding": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "gzip"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "examples": {
+                                    "example-0": {
+                                        "summary": "products",
+                                        "value": {
+                                            "success": true,
+                                            "message": "Products fetched successfully.",
+                                            "data": [
+                                                {
+                                                    "id": 4,
+                                                    "product_category_id": 1,
+                                                    "image": "products/20251107_142234_JP7N9pSb.png",
+                                                    "name": "Jacket Informatics",
+                                                    "slug": "jacket-informatics",
+                                                    "description": "Hi, Selamat Datang Di IF Merch, nikmati beragam product kami dengan kualitas yang premium!!  IF merch adalah Product Merchandise dari Himpunan Mahasiswa Informatika, Product yang akan di launching ini memiliki nilai modis dan trendy bagi anak IT.",
+                                                    "status": "released",
+                                                    "created_at": "2025-10-31T07:06:45.000000Z",
+                                                    "updated_at": "2025-11-07T14:57:10.000000Z",
+                                                    "category": "Clothes",
+                                                    "price": "135000.00"
+                                                },
+                                                {
+                                                    "id": 11,
+                                                    "product_category_id": 1,
+                                                    "image": "products/20251031_072144_NSWBG3nc.png",
+                                                    "name": "KAOS WASH OVERSIZE",
+                                                    "slug": "kaos-wash-oversize",
+                                                    "description": "[ Baju Wash ]  Nikmati kenyamanan maksimal dengan Baju Wash. Bahan lembut dan desain kekinian, pas untuk aktivitas harian. Material: Katun washed.",
+                                                    "status": "released",
+                                                    "created_at": "2025-10-31T07:21:44.000000Z",
+                                                    "updated_at": "2025-10-31T07:21:44.000000Z",
+                                                    "category": "Clothes",
+                                                    "price": "120000.00"
+                                                },
+                                                {
+                                                    "id": 3,
+                                                    "product_category_id": 2,
+                                                    "image": "products/20251031_072033_UHfUEoLM.png",
+                                                    "name": "Keychain",
+                                                    "slug": "keychain",
+                                                    "description": "[ Keychain ]  Bawa kunci dengan gaya menggunakan koleksi keychain IF Merch. Desain simpel dan praktis.Material: Akrilik",
+                                                    "status": "released",
+                                                    "created_at": "2025-10-31T06:53:39.000000Z",
+                                                    "updated_at": "2025-10-31T07:20:33.000000Z",
+                                                    "category": "Merchandise",
+                                                    "price": "12000.00"
+                                                },
+                                                {
+                                                    "id": 5,
+                                                    "product_category_id": 3,
+                                                    "image": "products/20251107_143602_tuRwtXV6.png",
+                                                    "name": "LANYARD IF MERCH",
+                                                    "slug": "lanyard-if-merch",
+                                                    "description": "[ Lanyard Informatics ]  Aksesoris kunci dengan praktis menggunakan Lanyard Informatics. Desain keren dan bahan tahan lama, cocok untuk semua kalangan.",
+                                                    "status": "released",
+                                                    "created_at": "2025-10-31T07:11:53.000000Z",
+                                                    "updated_at": "2025-11-07T14:40:55.000000Z",
+                                                    "category": "Accessories",
+                                                    "price": "15000.00"
+                                                },
+                                                {
+                                                    "id": 13,
+                                                    "product_category_id": 4,
+                                                    "image": "products/20251031_072447_h5FCpxt7.png",
+                                                    "name": "SPECIAL BUNDLE",
+                                                    "slug": "special-bundle",
+                                                    "description": "SPECIAL BUNDLE ALERT! Buat harimu makin keren dan bermakna dengan Bundle Hemat",
+                                                    "status": "released",
+                                                    "created_at": "2025-10-31T07:24:47.000000Z",
+                                                    "updated_at": "2025-10-31T07:25:55.000000Z",
+                                                    "category": "Bundling",
+                                                    "price": "185000.00"
+                                                },
+                                                {
+                                                    "id": 2,
+                                                    "product_category_id": 1,
+                                                    "image": "products/20251031_054801_rEKiua9e.png",
+                                                    "name": "T-shirt Cereal Coding",
+                                                    "slug": "t-shirt-cereal-coding",
+                                                    "description": "Hi, Selamat Datang Di IF Merch, nikmati beragam product kami dengan kualitas yang premium!!  IF merch adalah Product Merchandise dari Himpunan Mahasiswa Informatika, Product yang akan di launching ini memiliki nilai modis dan trendy bagi anak IT.",
+                                                    "status": "released",
+                                                    "created_at": "2025-10-31T05:48:01.000000Z",
+                                                    "updated_at": "2025-10-31T05:48:01.000000Z",
+                                                    "category": "Clothes",
+                                                    "price": "89000.00"
+                                                },
+                                                {
+                                                    "id": 1,
+                                                    "product_category_id": 1,
+                                                    "image": "products/20251031_054429_HfYrxQYe.png",
+                                                    "name": "T-shirt Javascript",
+                                                    "slug": "t-shirt-javascript",
+                                                    "description": "Hi, Selamat Datang Di IF Merch, nikmati beragam product kami dengan kualitas yang premium!!  IF merch adalah Product Merchandise dari Himpunan Mahasiswa Informatika, Product yang akan di launching ini memiliki nilai modis dan trendy bagi anak IT.",
+                                                    "status": "released",
+                                                    "created_at": "2025-10-31T05:44:29.000000Z",
+                                                    "updated_at": "2025-11-07T12:22:46.000000Z",
+                                                    "category": "Clothes",
+                                                    "price": "89000.00"
+                                                },
+                                                {
+                                                    "id": 14,
+                                                    "product_category_id": 1,
+                                                    "image": "products/20251107_142313_BauNjvqU.png",
+                                                    "name": "T-shirt PHP",
+                                                    "slug": "t-shirt-php",
+                                                    "description": "Hi, Selamat Datang Di IF Merch, nikmati beragam product kami dengan kualitas yang premium!!  IF merch adalah Product Merchandise dari Himpunan Mahasiswa Informatika, Product yang akan di launching ini memiliki nilai modis dan trendy bagi anak IT.",
+                                                    "status": "released",
+                                                    "created_at": "2025-11-07T14:23:13.000000Z",
+                                                    "updated_at": "2025-11-07T14:23:13.000000Z",
+                                                    "category": "Clothes",
+                                                    "price": "89000.00"
+                                                },
+                                                {
+                                                    "id": 10,
+                                                    "product_category_id": 3,
+                                                    "image": "products/20251031_071721_Mp66cHi2.png",
+                                                    "name": "TOPI INFORTINATION",
+                                                    "slug": "topi-infortination",
+                                                    "description": "[ Topi Infortination ]  Tingkatkan gaya dan semangatmu dengan Topi Infortination! Desain eksklusif dan bahan premium menjadikannya pilihan tepat untuk menemani aktivitas harianmu, baik di kampus maupun saat bersantai. Material: Rapel Denim dan Warna: Cream",
+                                                    "status": "released",
+                                                    "created_at": "2025-10-31T07:17:21.000000Z",
+                                                    "updated_at": "2025-10-31T08:03:14.000000Z",
+                                                    "category": "Accessories",
+                                                    "price": "45000.00"
+                                                },
+                                                {
+                                                    "id": 7,
+                                                    "product_category_id": 3,
+                                                    "image": "products/20251107_143556_wXOxXcj9.png",
+                                                    "name": "TOTEBAG IF MERCH",
+                                                    "slug": "totebag-if-merch",
+                                                    "description": "[ Tote Bag ]  Bawa barang dengan praktis menggunakan Tote Bag. Desain stylish dan ramah lingkungan, cocok untuk berbagai keperluan. Material: Kanvas tebal.",
+                                                    "status": "released",
+                                                    "created_at": "2025-10-31T07:13:40.000000Z",
+                                                    "updated_at": "2025-11-07T14:39:19.000000Z",
+                                                    "category": "Accessories",
+                                                    "price": "49000.00"
+                                                },
+                                                {
+                                                    "id": 6,
+                                                    "product_category_id": 2,
+                                                    "image": "products/20251107_144205_0OzYkRkD.png",
+                                                    "name": "TUMBLER IF MERCH",
+                                                    "slug": "tumbler-if-merch",
+                                                    "description": "[ Tumbler ]  Tetap terhidrasi dengan Tumbler. Desain modern dan tahan panas/dingin, cocok untuk dibawa ke kampus atau kantor. Material: steel stainless",
+                                                    "status": "released",
+                                                    "created_at": "2025-10-31T07:12:55.000000Z",
+                                                    "updated_at": "2025-11-07T14:42:05.000000Z",
+                                                    "category": "Merchandise",
+                                                    "price": "59000.00"
+                                                },
+                                                {
+                                                    "id": 12,
+                                                    "product_category_id": 1,
+                                                    "image": "products/20251031_072312_mZCEIp9M.png",
+                                                    "name": "WORKSHIRT INFORMATICS",
+                                                    "slug": "workshirt-informatics",
+                                                    "description": "[ Workshirt Informatics ] Tampil stylish dengan Workshirt Informatics. Desain modern dan bahan berkualitas tinggi membuatnya cocok untuk berbagai aktivitas, mulai dari kuliah hingga kegiatan organisasi. Tersedia 3 ukuran yaitu Reguler Fit, Boxy dan Double Sleeve. Material: Twill Ventura",
+                                                    "status": "released",
+                                                    "created_at": "2025-10-31T07:23:12.000000Z",
+                                                    "updated_at": "2025-10-31T07:23:12.000000Z",
+                                                    "category": "Clothes",
+                                                    "price": "175000.00"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "example-1": {
+                                        "summary": "products-search",
+                                        "value": {
+                                            "success": true,
+                                            "message": "Products fetched successfully.",
+                                            "data": [
+                                                {
+                                                    "id": 2,
+                                                    "product_category_id": 1,
+                                                    "image": "products/20251031_054801_rEKiua9e.png",
+                                                    "name": "T-shirt Cereal Coding",
+                                                    "slug": "t-shirt-cereal-coding",
+                                                    "description": "Hi, Selamat Datang Di IF Merch, nikmati beragam product kami dengan kualitas yang premium!!  IF merch adalah Product Merchandise dari Himpunan Mahasiswa Informatika, Product yang akan di launching ini memiliki nilai modis dan trendy bagi anak IT.",
+                                                    "status": "released",
+                                                    "created_at": "2025-10-31T05:48:01.000000Z",
+                                                    "updated_at": "2025-10-31T05:48:01.000000Z",
+                                                    "category": "Clothes",
+                                                    "price": "89000.00"
+                                                },
+                                                {
+                                                    "id": 1,
+                                                    "product_category_id": 1,
+                                                    "image": "products/20251031_054429_HfYrxQYe.png",
+                                                    "name": "T-shirt Javascript",
+                                                    "slug": "t-shirt-javascript",
+                                                    "description": "Hi, Selamat Datang Di IF Merch, nikmati beragam product kami dengan kualitas yang premium!!  IF merch adalah Product Merchandise dari Himpunan Mahasiswa Informatika, Product yang akan di launching ini memiliki nilai modis dan trendy bagi anak IT.",
+                                                    "status": "released",
+                                                    "created_at": "2025-10-31T05:44:29.000000Z",
+                                                    "updated_at": "2025-11-07T12:22:46.000000Z",
+                                                    "category": "Clothes",
+                                                    "price": "89000.00"
+                                                },
+                                                {
+                                                    "id": 14,
+                                                    "product_category_id": 1,
+                                                    "image": "products/20251107_142313_BauNjvqU.png",
+                                                    "name": "T-shirt PHP",
+                                                    "slug": "t-shirt-php",
+                                                    "description": "Hi, Selamat Datang Di IF Merch, nikmati beragam product kami dengan kualitas yang premium!!  IF merch adalah Product Merchandise dari Himpunan Mahasiswa Informatika, Product yang akan di launching ini memiliki nilai modis dan trendy bagi anak IT.",
+                                                    "status": "released",
+                                                    "created_at": "2025-11-07T14:23:13.000000Z",
+                                                    "updated_at": "2025-11-07T14:23:13.000000Z",
+                                                    "category": "Clothes",
+                                                    "price": "89000.00"
+                                                },
+                                                {
+                                                    "id": 12,
+                                                    "product_category_id": 1,
+                                                    "image": "products/20251031_072312_mZCEIp9M.png",
+                                                    "name": "WORKSHIRT INFORMATICS",
+                                                    "slug": "workshirt-informatics",
+                                                    "description": "[ Workshirt Informatics ] Tampil stylish dengan Workshirt Informatics. Desain modern dan bahan berkualitas tinggi membuatnya cocok untuk berbagai aktivitas, mulai dari kuliah hingga kegiatan organisasi. Tersedia 3 ukuran yaitu Reguler Fit, Boxy dan Double Sleeve. Material: Twill Ventura",
+                                                    "status": "released",
+                                                    "created_at": "2025-10-31T07:23:12.000000Z",
+                                                    "updated_at": "2025-10-31T07:23:12.000000Z",
+                                                    "category": "Clothes",
+                                                    "price": "175000.00"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/product/{slug}": {
+            "get": {
+                "tags": ["products"],
+                "summary": "detail product",
+                "security": [
+                    {
+                        "noauthAuth": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "slug",
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true,
+                        "example": "t-shirt-javascript"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                            "Server": {
+                                "schema": {
+                                    "type": "number",
+                                    "example": "nginx/1.25.4"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json"
+                                }
+                            },
+                            "Transfer-Encoding": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "chunked"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Vary": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Accept-Encoding"
+                                }
+                            },
+                            "X-Powered-By": {
+                                "schema": {
+                                    "type": "number",
+                                    "example": "PHP/8.4.13"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-cache, private"
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Wed, 19 Nov 2025 13:30:01 GMT"
+                                }
+                            },
+                            "Access-Control-Allow-Origin": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "http://localhost:3000"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
                                 }
                             },
                             "Content-Encoding": {
@@ -843,937 +1201,110 @@
                                 },
                                 "example": {
                                     "success": true,
-                                    "message": "Products fetched successfully.",
-                                    "data": [
-                                        {
-                                            "id": 1,
-                                            "product_category_id": 1,
-                                            "image": "products/20251031_054429_HfYrxQYe.png",
-                                            "name": "T-shirt Javascript Pria | Wanita Baju Web Programmer IT Geek Combed 24s",
-                                            "slug": "t-shirt-javascript-pria-wanita-baju-web-programmer-it-geek-combed-24s",
-                                            "description": "Hi, Selamat Datang Di IF Merch, nikmati beragam product kami dengan kualitas yang premium!!  IF merch adalah Product Merchandise dari Himpunan Mahasiswa Informatika, Product yang akan di launching ini memiliki nilai modis dan trendy bagi anak IT.",
-                                            "status": "released",
-                                            "created_at": "2025-10-31T05:44:29.000000Z",
-                                            "updated_at": "2025-10-31T05:46:07.000000Z",
-                                            "category": {
+                                    "message": "Product fetched successfully.",
+                                    "data": {
+                                        "id": 1,
+                                        "name": "T-shirt Javascript",
+                                        "slug": "t-shirt-javascript",
+                                        "description": "Hi, Selamat Datang Di IF Merch, nikmati beragam product kami dengan kualitas yang premium!!  IF merch adalah Product Merchandise dari Himpunan Mahasiswa Informatika, Product yang akan di launching ini memiliki nilai modis dan trendy bagi anak IT.",
+                                        "status": "released",
+                                        "category": "Clothes",
+                                        "image": "products/20251031_054429_HfYrxQYe.png",
+                                        "variants": [
+                                            {
                                                 "id": 1,
-                                                "name": "Pakaian",
-                                                "slug": "pakaian",
-                                                "created_at": "2025-10-31T05:39:51.000000Z",
-                                                "updated_at": "2025-10-31T05:39:51.000000Z"
+                                                "product_id": 1,
+                                                "name": "Lengan Pendek M",
+                                                "sku": "SHRT-JS-LK-M",
+                                                "price": "89000.00",
+                                                "stock": 10,
+                                                "created_at": "2025-10-31T07:27:24.000000Z",
+                                                "updated_at": "2025-10-31T07:27:24.000000Z"
                                             },
-                                            "variants": [
-                                                {
-                                                    "id": 1,
-                                                    "product_id": 1,
-                                                    "name": "Lengan Pendek M",
-                                                    "sku": "SHRT-JS-LK-M",
-                                                    "price": "89000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:27:24.000000Z",
-                                                    "updated_at": "2025-10-31T07:27:24.000000Z"
-                                                },
-                                                {
-                                                    "id": 2,
-                                                    "product_id": 1,
-                                                    "name": "Lengan Pendek L",
-                                                    "sku": "SHRT-JS-LK-L",
-                                                    "price": "89000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:28:28.000000Z",
-                                                    "updated_at": "2025-10-31T07:28:28.000000Z"
-                                                },
-                                                {
-                                                    "id": 3,
-                                                    "product_id": 1,
-                                                    "name": "Lengan Pendek XL",
-                                                    "sku": "SHRT-JS-LK-XL",
-                                                    "price": "89000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:29:21.000000Z",
-                                                    "updated_at": "2025-10-31T07:29:21.000000Z"
-                                                },
-                                                {
-                                                    "id": 4,
-                                                    "product_id": 1,
-                                                    "name": "Lengan Pendek XXL",
-                                                    "sku": "SHRT-JS-LK-XXL",
-                                                    "price": "95000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:30:03.000000Z",
-                                                    "updated_at": "2025-10-31T07:30:03.000000Z"
-                                                },
-                                                {
-                                                    "id": 5,
-                                                    "product_id": 1,
-                                                    "name": "Lengan Pendek XXXL",
-                                                    "sku": "SHRT-JS-LK-XXXL",
-                                                    "price": "100000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:30:24.000000Z",
-                                                    "updated_at": "2025-10-31T07:30:24.000000Z"
-                                                }
-                                            ],
-                                            "galleries": [
-                                                {
-                                                    "id": 2,
-                                                    "product_id": 1,
-                                                    "image": "product-galleries/20251031_084436_aVxiWxOL.jpg",
-                                                    "created_at": "2025-10-31T08:44:36.000000Z",
-                                                    "updated_at": "2025-10-31T08:44:36.000000Z"
-                                                },
-                                                {
-                                                    "id": 3,
-                                                    "product_id": 1,
-                                                    "image": "product-galleries/20251031_084453_watCMcvK.jpg",
-                                                    "created_at": "2025-10-31T08:44:53.000000Z",
-                                                    "updated_at": "2025-10-31T08:44:53.000000Z"
-                                                },
-                                                {
-                                                    "id": 5,
-                                                    "product_id": 1,
-                                                    "image": "product-galleries/20251031_084535_vD6Snusq.jpg",
-                                                    "created_at": "2025-10-31T08:45:35.000000Z",
-                                                    "updated_at": "2025-10-31T08:45:35.000000Z"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "id": 2,
-                                            "product_category_id": 1,
-                                            "image": "products/20251031_054801_rEKiua9e.png",
-                                            "name": "T-shirt Cereal Coding",
-                                            "slug": "t-shirt-cereal-coding",
-                                            "description": "Hi, Selamat Datang Di IF Merch, nikmati beragam product kami dengan kualitas yang premium!!  IF merch adalah Product Merchandise dari Himpunan Mahasiswa Informatika, Product yang akan di launching ini memiliki nilai modis dan trendy bagi anak IT.",
-                                            "status": "released",
-                                            "created_at": "2025-10-31T05:48:01.000000Z",
-                                            "updated_at": "2025-10-31T05:48:01.000000Z",
-                                            "category": {
-                                                "id": 1,
-                                                "name": "Pakaian",
-                                                "slug": "pakaian",
-                                                "created_at": "2025-10-31T05:39:51.000000Z",
-                                                "updated_at": "2025-10-31T05:39:51.000000Z"
-                                            },
-                                            "variants": [
-                                                {
-                                                    "id": 6,
-                                                    "product_id": 2,
-                                                    "name": "Lengan Pendek M",
-                                                    "sku": "SHRT-CC-LK-M",
-                                                    "price": "89000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:31:24.000000Z",
-                                                    "updated_at": "2025-10-31T07:27:24.000000Z"
-                                                },
-                                                {
-                                                    "id": 7,
-                                                    "product_id": 2,
-                                                    "name": "Lengan Pendek L",
-                                                    "sku": "SHRT-CC-LK-L",
-                                                    "price": "89000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:32:24.000000Z",
-                                                    "updated_at": "2025-10-31T07:28:28.000000Z"
-                                                },
-                                                {
-                                                    "id": 8,
-                                                    "product_id": 2,
-                                                    "name": "Lengan Pendek XL",
-                                                    "sku": "SHRT-CC-LK-XL",
-                                                    "price": "89000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:33:24.000000Z",
-                                                    "updated_at": "2025-10-31T07:29:21.000000Z"
-                                                },
-                                                {
-                                                    "id": 9,
-                                                    "product_id": 2,
-                                                    "name": "Lengan Pendek XXL",
-                                                    "sku": "SHRT-CC-LK-XXL",
-                                                    "price": "95000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:34:24.000000Z",
-                                                    "updated_at": "2025-10-31T07:30:03.000000Z"
-                                                },
-                                                {
-                                                    "id": 10,
-                                                    "product_id": 2,
-                                                    "name": "Lengan Pendek XXXL",
-                                                    "sku": "SHRT-CC-LK-XXXL",
-                                                    "price": "100000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:35:24.000000Z",
-                                                    "updated_at": "2025-10-31T07:30:24.000000Z"
-                                                }
-                                            ],
-                                            "galleries": [
-                                                {
-                                                    "id": 4,
-                                                    "product_id": 2,
-                                                    "image": "product-galleries/20251031_084516_jHzsIMn0.jpg",
-                                                    "created_at": "2025-10-31T08:45:16.000000Z",
-                                                    "updated_at": "2025-10-31T08:45:16.000000Z"
-                                                },
-                                                {
-                                                    "id": 6,
-                                                    "product_id": 2,
-                                                    "image": "product-galleries/20251031_084545_2LWuCvKx.png",
-                                                    "created_at": "2025-10-31T08:45:45.000000Z",
-                                                    "updated_at": "2025-10-31T08:45:45.000000Z"
-                                                },
-                                                {
-                                                    "id": 7,
-                                                    "product_id": 2,
-                                                    "image": "product-galleries/20251031_084556_pZJDr2QN.png",
-                                                    "created_at": "2025-10-31T08:45:56.000000Z",
-                                                    "updated_at": "2025-10-31T08:45:56.000000Z"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "id": 3,
-                                            "product_category_id": 2,
-                                            "image": "products/20251031_072033_UHfUEoLM.png",
-                                            "name": "Keychain",
-                                            "slug": "keychain",
-                                            "description": "[ Keychain ]  Bawa kunci dengan gaya menggunakan koleksi keychain IF Merch. Desain simpel dan praktis.Material: Akrilik",
-                                            "status": "released",
-                                            "created_at": "2025-10-31T06:53:39.000000Z",
-                                            "updated_at": "2025-10-31T07:20:33.000000Z",
-                                            "category": {
+                                            {
                                                 "id": 2,
-                                                "name": "Merchandise",
-                                                "slug": "merchandise",
-                                                "created_at": "2025-10-31T05:40:03.000000Z",
-                                                "updated_at": "2025-10-31T05:40:03.000000Z"
+                                                "product_id": 1,
+                                                "name": "Lengan Pendek L",
+                                                "sku": "SHRT-JS-LK-L",
+                                                "price": "89000.00",
+                                                "stock": 10,
+                                                "created_at": "2025-10-31T07:28:28.000000Z",
+                                                "updated_at": "2025-10-31T07:28:28.000000Z"
                                             },
-                                            "variants": [
-                                                {
-                                                    "id": 43,
-                                                    "product_id": 3,
-                                                    "name": "CATLAB",
-                                                    "sku": "KC-CTL",
-                                                    "price": "12000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T08:09:01.000000Z",
-                                                    "updated_at": "2025-10-31T08:09:01.000000Z"
-                                                },
-                                                {
-                                                    "id": 44,
-                                                    "product_id": 3,
-                                                    "name": "BLUESCREEN",
-                                                    "sku": "KC-BS",
-                                                    "price": "12000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T08:09:29.000000Z",
-                                                    "updated_at": "2025-10-31T08:09:29.000000Z"
-                                                },
-                                                {
-                                                    "id": 45,
-                                                    "product_id": 3,
-                                                    "name": "INFORMATICS",
-                                                    "sku": "KC-INF",
-                                                    "price": "12000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T08:09:53.000000Z",
-                                                    "updated_at": "2025-10-31T08:09:53.000000Z"
-                                                },
-                                                {
-                                                    "id": 46,
-                                                    "product_id": 3,
-                                                    "name": "SIPERKAP",
-                                                    "sku": "KC-SPK",
-                                                    "price": "12000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T08:10:14.000000Z",
-                                                    "updated_at": "2025-10-31T08:10:14.000000Z"
-                                                },
-                                                {
-                                                    "id": 47,
-                                                    "product_id": 3,
-                                                    "name": "INFORTINATION",
-                                                    "sku": "KC-INFN",
-                                                    "price": "12000.00",
-                                                    "stock": 12,
-                                                    "created_at": "2025-10-31T08:11:41.000000Z",
-                                                    "updated_at": "2025-10-31T08:11:41.000000Z"
-                                                }
-                                            ],
-                                            "galleries": [
-                                                {
-                                                    "id": 22,
-                                                    "product_id": 3,
-                                                    "image": "product-galleries/20251031_085412_W7cqDozX.png",
-                                                    "created_at": "2025-10-31T08:54:12.000000Z",
-                                                    "updated_at": "2025-10-31T08:54:12.000000Z"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "id": 4,
-                                            "product_category_id": 1,
-                                            "image": "products/20251031_070645_JA79mq9h.png",
-                                            "name": "Jacket Infortination",
-                                            "slug": "jacket-infortination",
-                                            "description": "Hi, Selamat Datang Di IF Merch, nikmati beragam product kami dengan kualitas yang premium!!  IF merch adalah Product Merchandise dari Himpunan Mahasiswa Informatika, Product yang akan di launching ini memiliki nilai modis dan trendy bagi anak IT.",
-                                            "status": "released",
-                                            "created_at": "2025-10-31T07:06:45.000000Z",
-                                            "updated_at": "2025-10-31T07:06:45.000000Z",
-                                            "category": {
-                                                "id": 1,
-                                                "name": "Pakaian",
-                                                "slug": "pakaian",
-                                                "created_at": "2025-10-31T05:39:51.000000Z",
-                                                "updated_at": "2025-10-31T05:39:51.000000Z"
-                                            },
-                                            "variants": [
-                                                {
-                                                    "id": 11,
-                                                    "product_id": 4,
-                                                    "name": "Lengan Panjang M",
-                                                    "sku": "JKT-INF-LG-M",
-                                                    "price": "135000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:36:26.000000Z",
-                                                    "updated_at": "2025-10-31T07:36:26.000000Z"
-                                                },
-                                                {
-                                                    "id": 12,
-                                                    "product_id": 4,
-                                                    "name": "Lengan Panjang L",
-                                                    "sku": "JKT-INF-LG-L",
-                                                    "price": "140000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:37:27.000000Z",
-                                                    "updated_at": "2025-10-31T07:36:26.000000Z"
-                                                },
-                                                {
-                                                    "id": 13,
-                                                    "product_id": 4,
-                                                    "name": "Lengan Panjang XL",
-                                                    "sku": "JKT-INF-LG-XL",
-                                                    "price": "145000.00",
-                                                    "stock": 12,
-                                                    "created_at": "2025-10-31T07:39:07.000000Z",
-                                                    "updated_at": "2025-10-31T07:39:07.000000Z"
-                                                },
-                                                {
-                                                    "id": 14,
-                                                    "product_id": 4,
-                                                    "name": "Lengan Panjang XXL",
-                                                    "sku": "JKT-INF-LG-XXL",
-                                                    "price": "150000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:39:39.000000Z",
-                                                    "updated_at": "2025-10-31T07:39:39.000000Z"
-                                                }
-                                            ],
-                                            "galleries": [
-                                                {
-                                                    "id": 8,
-                                                    "product_id": 4,
-                                                    "image": "product-galleries/20251031_084605_j1G1qBPq.png",
-                                                    "created_at": "2025-10-31T08:46:05.000000Z",
-                                                    "updated_at": "2025-10-31T08:46:05.000000Z"
-                                                },
-                                                {
-                                                    "id": 9,
-                                                    "product_id": 4,
-                                                    "image": "product-galleries/20251031_084615_rT7Ywp9o.png",
-                                                    "created_at": "2025-10-31T08:46:15.000000Z",
-                                                    "updated_at": "2025-10-31T08:46:15.000000Z"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "id": 6,
-                                            "product_category_id": 2,
-                                            "image": "products/20251031_071255_lsNCbuLI.png",
-                                            "name": "TUMBLER IF MERCH",
-                                            "slug": "tumbler-if-merch",
-                                            "description": "[ Tumbler ]  Tetap terhidrasi dengan Tumbler. Desain modern dan tahan panas/dingin, cocok untuk dibawa ke kampus atau kantor. Material: steel stainless",
-                                            "status": "released",
-                                            "created_at": "2025-10-31T07:12:55.000000Z",
-                                            "updated_at": "2025-10-31T08:31:26.000000Z",
-                                            "category": {
-                                                "id": 2,
-                                                "name": "Merchandise",
-                                                "slug": "merchandise",
-                                                "created_at": "2025-10-31T05:40:03.000000Z",
-                                                "updated_at": "2025-10-31T05:40:03.000000Z"
-                                            },
-                                            "variants": [
-                                                {
-                                                    "id": 41,
-                                                    "product_id": 6,
-                                                    "name": "Tumbler Dino",
-                                                    "sku": "TMB-DN",
-                                                    "price": "59000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T08:07:58.000000Z",
-                                                    "updated_at": "2025-10-31T08:07:58.000000Z"
-                                                },
-                                                {
-                                                    "id": 42,
-                                                    "product_id": 6,
-                                                    "name": "Tumbler Informatics",
-                                                    "sku": "TMB-INF",
-                                                    "price": "59000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T08:08:20.000000Z",
-                                                    "updated_at": "2025-10-31T08:10:54.000000Z"
-                                                }
-                                            ],
-                                            "galleries": [
-                                                {
-                                                    "id": 19,
-                                                    "product_id": 6,
-                                                    "image": "product-galleries/20251031_085308_SpF8mYi9.png",
-                                                    "created_at": "2025-10-31T08:53:08.000000Z",
-                                                    "updated_at": "2025-10-31T08:53:08.000000Z"
-                                                },
-                                                {
-                                                    "id": 20,
-                                                    "product_id": 6,
-                                                    "image": "product-galleries/20251031_085320_ZekWlOcY.png",
-                                                    "created_at": "2025-10-31T08:53:20.000000Z",
-                                                    "updated_at": "2025-10-31T08:53:20.000000Z"
-                                                },
-                                                {
-                                                    "id": 21,
-                                                    "product_id": 6,
-                                                    "image": "product-galleries/20251031_085329_P3aPXbtO.png",
-                                                    "created_at": "2025-10-31T08:53:29.000000Z",
-                                                    "updated_at": "2025-10-31T08:53:29.000000Z"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "id": 10,
-                                            "product_category_id": 3,
-                                            "image": "products/20251031_071721_Mp66cHi2.png",
-                                            "name": "TOPI INFORTINATION",
-                                            "slug": "topi-infortination",
-                                            "description": "[ Topi Infortination ]  Tingkatkan gaya dan semangatmu dengan Topi Infortination! Desain eksklusif dan bahan premium menjadikannya pilihan tepat untuk menemani aktivitas harianmu, baik di kampus maupun saat bersantai. Material: Rapel Denim dan Warna: Cream",
-                                            "status": "released",
-                                            "created_at": "2025-10-31T07:17:21.000000Z",
-                                            "updated_at": "2025-10-31T08:03:14.000000Z",
-                                            "category": {
+                                            {
                                                 "id": 3,
-                                                "name": "Aksesoris",
-                                                "slug": "aksesoris",
-                                                "created_at": "2025-10-31T05:40:11.000000Z",
-                                                "updated_at": "2025-10-31T05:40:11.000000Z"
+                                                "product_id": 1,
+                                                "name": "Lengan Pendek XL",
+                                                "sku": "SHRT-JS-LK-XL",
+                                                "price": "89000.00",
+                                                "stock": 10,
+                                                "created_at": "2025-10-31T07:29:21.000000Z",
+                                                "updated_at": "2025-10-31T07:29:21.000000Z"
                                             },
-                                            "variants": [
-                                                {
-                                                    "id": 34,
-                                                    "product_id": 10,
-                                                    "name": "Cap Cream",
-                                                    "sku": "TP-CP-C",
-                                                    "price": "45000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:55:50.000000Z",
-                                                    "updated_at": "2025-10-31T07:56:27.000000Z"
-                                                },
-                                                {
-                                                    "id": 35,
-                                                    "product_id": 10,
-                                                    "name": "Bucket Cream",
-                                                    "sku": "TP-BK-C",
-                                                    "price": "39000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:56:22.000000Z",
-                                                    "updated_at": "2025-10-31T07:56:22.000000Z"
-                                                },
-                                                {
-                                                    "id": 36,
-                                                    "product_id": 10,
-                                                    "name": "Wash Cap Gray",
-                                                    "sku": "TP-WC-G",
-                                                    "price": "49000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:57:09.000000Z",
-                                                    "updated_at": "2025-10-31T07:57:09.000000Z"
-                                                }
-                                            ],
-                                            "galleries": [
-                                                {
-                                                    "id": 11,
-                                                    "product_id": 10,
-                                                    "image": "product-galleries/20251031_084715_FPNsI1TV.png",
-                                                    "created_at": "2025-10-31T08:47:15.000000Z",
-                                                    "updated_at": "2025-10-31T08:47:15.000000Z"
-                                                },
-                                                {
-                                                    "id": 12,
-                                                    "product_id": 10,
-                                                    "image": "product-galleries/20251031_084731_cDWUnNWR.png",
-                                                    "created_at": "2025-10-31T08:47:31.000000Z",
-                                                    "updated_at": "2025-10-31T08:47:31.000000Z"
-                                                },
-                                                {
-                                                    "id": 13,
-                                                    "product_id": 10,
-                                                    "image": "product-galleries/20251031_084756_4N0FsxeD.png",
-                                                    "created_at": "2025-10-31T08:47:56.000000Z",
-                                                    "updated_at": "2025-10-31T08:47:56.000000Z"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "id": 11,
-                                            "product_category_id": 1,
-                                            "image": "products/20251031_072144_NSWBG3nc.png",
-                                            "name": "KAOS WASH OVERSIZE",
-                                            "slug": "kaos-wash-oversize",
-                                            "description": "[ Baju Wash ]  Nikmati kenyamanan maksimal dengan Baju Wash. Bahan lembut dan desain kekinian, pas untuk aktivitas harian. Material: Katun washed.",
-                                            "status": "released",
-                                            "created_at": "2025-10-31T07:21:44.000000Z",
-                                            "updated_at": "2025-10-31T07:21:44.000000Z",
-                                            "category": {
-                                                "id": 1,
-                                                "name": "Pakaian",
-                                                "slug": "pakaian",
-                                                "created_at": "2025-10-31T05:39:51.000000Z",
-                                                "updated_at": "2025-10-31T05:39:51.000000Z"
-                                            },
-                                            "variants": [
-                                                {
-                                                    "id": 15,
-                                                    "product_id": 11,
-                                                    "name": "Lengan Pendek M",
-                                                    "sku": "SHRT-WO-LK-M",
-                                                    "price": "120000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:41:08.000000Z",
-                                                    "updated_at": "2025-10-31T07:41:08.000000Z"
-                                                },
-                                                {
-                                                    "id": 16,
-                                                    "product_id": 11,
-                                                    "name": "Lengan Pendek L",
-                                                    "sku": "SHRT-WO-LK-L",
-                                                    "price": "120000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:43:08.000000Z",
-                                                    "updated_at": "2025-10-31T07:41:08.000000Z"
-                                                },
-                                                {
-                                                    "id": 17,
-                                                    "product_id": 11,
-                                                    "name": "Lengan Pendek XL",
-                                                    "sku": "SHRT-WO-LK-XL",
-                                                    "price": "120000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:44:08.000000Z",
-                                                    "updated_at": "2025-10-31T07:41:08.000000Z"
-                                                },
-                                                {
-                                                    "id": 18,
-                                                    "product_id": 11,
-                                                    "name": "Lengan Pendek XXL",
-                                                    "sku": "SHRT-WO-LK-XXL",
-                                                    "price": "120000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:45:08.000000Z",
-                                                    "updated_at": "2025-10-31T07:41:08.000000Z"
-                                                }
-                                            ],
-                                            "galleries": [
-                                                {
-                                                    "id": 10,
-                                                    "product_id": 11,
-                                                    "image": "product-galleries/20251031_084645_AfiQ7ygE.png",
-                                                    "created_at": "2025-10-31T08:46:45.000000Z",
-                                                    "updated_at": "2025-10-31T08:46:45.000000Z"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "id": 12,
-                                            "product_category_id": 1,
-                                            "image": "products/20251031_072312_mZCEIp9M.png",
-                                            "name": "WORKSHIRT INFORMATICS",
-                                            "slug": "workshirt-informatics",
-                                            "description": "[ Workshirt Informatics ] Tampil stylish dengan Workshirt Informatics. Desain modern dan bahan berkualitas tinggi membuatnya cocok untuk berbagai aktivitas, mulai dari kuliah hingga kegiatan organisasi. Tersedia 3 ukuran yaitu Reguler Fit, Boxy dan Double Sleeve. Material: Twill Ventura",
-                                            "status": "released",
-                                            "created_at": "2025-10-31T07:23:12.000000Z",
-                                            "updated_at": "2025-10-31T07:23:12.000000Z",
-                                            "category": {
-                                                "id": 1,
-                                                "name": "Pakaian",
-                                                "slug": "pakaian",
-                                                "created_at": "2025-10-31T05:39:51.000000Z",
-                                                "updated_at": "2025-10-31T05:39:51.000000Z"
-                                            },
-                                            "variants": [
-                                                {
-                                                    "id": 19,
-                                                    "product_id": 12,
-                                                    "name": "Double Sleeve S",
-                                                    "sku": "WSHRT-INF-DS-S",
-                                                    "price": "175000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:46:31.000000Z",
-                                                    "updated_at": "2025-10-31T07:46:31.000000Z"
-                                                },
-                                                {
-                                                    "id": 20,
-                                                    "product_id": 12,
-                                                    "name": "Double Sleeve M",
-                                                    "sku": "WSHRT-INF-DS-M",
-                                                    "price": "175000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:47:31.000000Z",
-                                                    "updated_at": "2025-10-31T07:46:31.000000Z"
-                                                },
-                                                {
-                                                    "id": 21,
-                                                    "product_id": 12,
-                                                    "name": "Double Sleeve L",
-                                                    "sku": "WSHRT-INF-DS-L",
-                                                    "price": "175000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:48:31.000000Z",
-                                                    "updated_at": "2025-10-31T07:46:31.000000Z"
-                                                },
-                                                {
-                                                    "id": 22,
-                                                    "product_id": 12,
-                                                    "name": "Double Sleeve XL",
-                                                    "sku": "WSHRT-INF-DS-XL",
-                                                    "price": "175000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:49:31.000000Z",
-                                                    "updated_at": "2025-10-31T07:46:31.000000Z"
-                                                },
-                                                {
-                                                    "id": 23,
-                                                    "product_id": 12,
-                                                    "name": "Double Sleeve XXL",
-                                                    "sku": "WSHRT-INF-DS-XXL",
-                                                    "price": "175000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:50:31.000000Z",
-                                                    "updated_at": "2025-10-31T07:46:31.000000Z"
-                                                },
-                                                {
-                                                    "id": 24,
-                                                    "product_id": 12,
-                                                    "name": "Boxy S",
-                                                    "sku": "WSHRT-INF-BX-S",
-                                                    "price": "170000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:50:33.000000Z",
-                                                    "updated_at": "2025-10-31T07:50:09.000000Z"
-                                                },
-                                                {
-                                                    "id": 25,
-                                                    "product_id": 12,
-                                                    "name": "Boxy M",
-                                                    "sku": "WSHRT-INF-BX-M",
-                                                    "price": "170000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:51:09.000000Z",
-                                                    "updated_at": "2025-10-31T07:50:09.000000Z"
-                                                },
-                                                {
-                                                    "id": 26,
-                                                    "product_id": 12,
-                                                    "name": "Boxy L",
-                                                    "sku": "WSHRT-INF-BX-L",
-                                                    "price": "170000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:52:09.000000Z",
-                                                    "updated_at": "2025-10-31T07:50:09.000000Z"
-                                                },
-                                                {
-                                                    "id": 27,
-                                                    "product_id": 12,
-                                                    "name": "Boxy XL",
-                                                    "sku": "WSHRT-INF-BX-XL",
-                                                    "price": "170000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:53:09.000000Z",
-                                                    "updated_at": "2025-10-31T07:50:09.000000Z"
-                                                },
-                                                {
-                                                    "id": 28,
-                                                    "product_id": 12,
-                                                    "name": "Boxy XXL",
-                                                    "sku": "WSHRT-INF-BX-XXL",
-                                                    "price": "170000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:54:09.000000Z",
-                                                    "updated_at": "2025-10-31T07:50:09.000000Z"
-                                                },
-                                                {
-                                                    "id": 29,
-                                                    "product_id": 12,
-                                                    "name": "Reguler Fit S",
-                                                    "sku": "WSHRT-INF-RF-S",
-                                                    "price": "165000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:55:13.000000Z",
-                                                    "updated_at": "2025-10-31T07:52:13.000000Z"
-                                                },
-                                                {
-                                                    "id": 30,
-                                                    "product_id": 12,
-                                                    "name": "Reguler Fit M",
-                                                    "sku": "WSHRT-INF-RF-M",
-                                                    "price": "165000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:55:14.000000Z",
-                                                    "updated_at": "2025-10-31T07:52:13.000000Z"
-                                                },
-                                                {
-                                                    "id": 31,
-                                                    "product_id": 12,
-                                                    "name": "Reguler Fit L",
-                                                    "sku": "WSHRT-INF-RF-L",
-                                                    "price": "165000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:55:16.000000Z",
-                                                    "updated_at": "2025-10-31T07:52:13.000000Z"
-                                                },
-                                                {
-                                                    "id": 32,
-                                                    "product_id": 12,
-                                                    "name": "Reguler Fit XL",
-                                                    "sku": "WSHRT-INF-RF-XL",
-                                                    "price": "165000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:55:19.000000Z",
-                                                    "updated_at": "2025-10-31T07:52:13.000000Z"
-                                                },
-                                                {
-                                                    "id": 33,
-                                                    "product_id": 12,
-                                                    "name": "Reguler Fit XXL",
-                                                    "sku": "WSHRT-INF-RF-XXL",
-                                                    "price": "165000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:55:20.000000Z",
-                                                    "updated_at": "2025-10-31T07:52:13.000000Z"
-                                                }
-                                            ],
-                                            "galleries": [
-                                                {
-                                                    "id": 18,
-                                                    "product_id": 12,
-                                                    "image": "product-galleries/20251031_085219_10OdaGxf.png",
-                                                    "created_at": "2025-10-31T08:52:19.000000Z",
-                                                    "updated_at": "2025-10-31T08:52:19.000000Z"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "id": 13,
-                                            "product_category_id": 4,
-                                            "image": "products/20251031_072447_h5FCpxt7.png",
-                                            "name": "SPECIAL BUNDLE",
-                                            "slug": "special-bundle",
-                                            "description": "SPECIAL BUNDLE ALERT! Buat harimu makin keren dan bermakna dengan Bundle Hemat",
-                                            "status": "released",
-                                            "created_at": "2025-10-31T07:24:47.000000Z",
-                                            "updated_at": "2025-10-31T07:25:55.000000Z",
-                                            "category": {
+                                            {
                                                 "id": 4,
-                                                "name": "Bundling",
-                                                "slug": "bundling",
-                                                "created_at": "2025-10-31T05:40:20.000000Z",
-                                                "updated_at": "2025-10-31T05:40:20.000000Z"
+                                                "product_id": 1,
+                                                "name": "Lengan Pendek XXL",
+                                                "sku": "SHRT-JS-LK-XXL",
+                                                "price": "95000.00",
+                                                "stock": 10,
+                                                "created_at": "2025-10-31T07:30:03.000000Z",
+                                                "updated_at": "2025-10-31T07:30:03.000000Z"
                                             },
-                                            "variants": [
-                                                {
-                                                    "id": 37,
-                                                    "product_id": 13,
-                                                    "name": "WASH SHIRT + TUMBLR + KEYCHAIN",
-                                                    "sku": "BUND-001",
-                                                    "price": "185000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:58:21.000000Z",
-                                                    "updated_at": "2025-10-31T07:58:21.000000Z"
-                                                },
-                                                {
-                                                    "id": 38,
-                                                    "product_id": 13,
-                                                    "name": "WASH HAT + 3 PIN + TOTEBAG",
-                                                    "sku": "BUND-002",
-                                                    "price": "90000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:59:15.000000Z",
-                                                    "updated_at": "2025-10-31T07:59:15.000000Z"
-                                                },
-                                                {
-                                                    "id": 39,
-                                                    "product_id": 13,
-                                                    "name": "LANYARD + 3 PIN + BUCKET HAT",
-                                                    "sku": "BUND-003",
-                                                    "price": "50000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T07:59:55.000000Z",
-                                                    "updated_at": "2025-10-31T07:59:55.000000Z"
-                                                },
-                                                {
-                                                    "id": 40,
-                                                    "product_id": 13,
-                                                    "name": "STICKER + 3 PIN + WORKSHIRT",
-                                                    "sku": "BUND-004",
-                                                    "price": "170000.00",
-                                                    "stock": 10,
-                                                    "created_at": "2025-10-31T08:00:38.000000Z",
-                                                    "updated_at": "2025-10-31T08:00:38.000000Z"
-                                                }
-                                            ],
-                                            "galleries": [
-                                                {
-                                                    "id": 14,
-                                                    "product_id": 13,
-                                                    "image": "product-galleries/20251031_085100_PcZ0AXOd.png",
-                                                    "created_at": "2025-10-31T08:51:00.000000Z",
-                                                    "updated_at": "2025-10-31T08:51:00.000000Z"
-                                                },
-                                                {
-                                                    "id": 15,
-                                                    "product_id": 13,
-                                                    "image": "product-galleries/20251031_085115_ntf2Qabe.png",
-                                                    "created_at": "2025-10-31T08:51:15.000000Z",
-                                                    "updated_at": "2025-10-31T08:51:15.000000Z"
-                                                },
-                                                {
-                                                    "id": 16,
-                                                    "product_id": 13,
-                                                    "image": "product-galleries/20251031_085131_8tl05hjd.png",
-                                                    "created_at": "2025-10-31T08:51:31.000000Z",
-                                                    "updated_at": "2025-10-31T08:51:31.000000Z"
-                                                },
-                                                {
-                                                    "id": 17,
-                                                    "product_id": 13,
-                                                    "image": "product-galleries/20251031_085153_NbRp3IrC.png",
-                                                    "created_at": "2025-10-31T08:51:53.000000Z",
-                                                    "updated_at": "2025-10-31T08:51:53.000000Z"
-                                                }
-                                            ]
-                                        }
-                                    ]
+                                            {
+                                                "id": 5,
+                                                "product_id": 1,
+                                                "name": "Lengan Pendek XXXL",
+                                                "sku": "SHRT-JS-LK-XXXL",
+                                                "price": "100000.00",
+                                                "stock": 10,
+                                                "created_at": "2025-10-31T07:30:24.000000Z",
+                                                "updated_at": "2025-10-31T07:30:24.000000Z"
+                                            }
+                                        ],
+                                        "galleries": [
+                                            {
+                                                "id": 2,
+                                                "product_id": 1,
+                                                "image": "product-galleries/20251107_142407_bf3CyZDA.png",
+                                                "created_at": "2025-10-31T08:44:36.000000Z",
+                                                "updated_at": "2025-11-07T14:24:07.000000Z"
+                                            },
+                                            {
+                                                "id": 3,
+                                                "product_id": 1,
+                                                "image": "product-galleries/20251107_142359_OxuIKmKf.png",
+                                                "created_at": "2025-10-31T08:44:53.000000Z",
+                                                "updated_at": "2025-11-07T14:23:59.000000Z"
+                                            },
+                                            {
+                                                "id": 4,
+                                                "product_id": 1,
+                                                "image": "product-galleries/20251031_084516_jHzsIMn0.jpg",
+                                                "created_at": "2025-10-31T08:45:16.000000Z",
+                                                "updated_at": "2025-11-08T06:47:57.000000Z"
+                                            },
+                                            {
+                                                "id": 5,
+                                                "product_id": 1,
+                                                "image": "product-galleries/20251031_084535_vD6Snusq.jpg",
+                                                "created_at": "2025-10-31T08:45:35.000000Z",
+                                                "updated_at": "2025-10-31T08:45:35.000000Z"
+                                            }
+                                        ],
+                                        "created_at": "2025-10-31T05:44:29.000000Z",
+                                        "updated_at": "2025-11-07T12:22:46.000000Z"
+                                    }
                                 }
-                            },
-                            "text/plain": {
-                                "schema": {
-                                    "type": "string"
-                                },
-                                "example": "{\n    \"success\": true,\n    \"message\": \"Products fetched successfully.\",\n    \"data\": [\n        {\n            \"id\": 4,\n            \"product_category_id\": 1,\n            \"image\": \"products/20251031_070645_JA79mq9h.png\",\n            \"name\": \"Jacket Infortination\",\n            \"slug\": \"jacket-infortination\",\n            \"description\": \"Hi, Selamat Datang Di IF Merch, nikmati beragam product kami dengan kualitas yang premium!!  IF merch adalah Product Merchandise dari Himpunan Mahasiswa Informatika, Product yang akan di launching ini memiliki nilai modis dan trendy bagi anak IT.\",\n            \"status\": \"released\",\n            \"created_at\": \"2025-10-31T07:06:45.000000Z\",\n            \"updated_at\": \"2025-10-31T07:06:45.000000Z\",\n            \"category\": {\n                \"id\": 1,\n                \"name\": \"Pakaian\",\n                \"slug\": \"pakaian\",\n                \"created_at\": \"2025-10-31T05:39:51.000000Z\",\n                \"updated_at\": \"2025-10-31T05:39:51.000000Z\"\n            },\n            \"variants\": [\n                {\n                    \"id\": 11,\n                    \"product_id\": 4,\n                    \"name\": \"Lengan Panjang M\",\n                    \"sku\": \"JKT-INF-LG-M\",\n                    \"price\": \"135000.00\",\n                    \"stock\": 10,\n                    \"created_at\": \"2025-10-31T07:36:26.000000Z\",\n                    \"updated_at\": \"2025-10-31T07:36:26.000000Z\"\n                },\n                {\n                    \"id\": 12,\n                    \"product_id\": 4,\n                    \"name\": \"Lengan Panjang L\",\n                    \"sku\": \"JKT-INF-LG-L\",\n                    \"price\": \"140000.00\",\n                    \"stock\": 10,\n                    \"created_at\": \"2025-10-31T07:37:27.000000Z\",\n                    \"updated_at\": \"2025-10-31T07:36:26.000000Z\"\n                },\n                {\n                    \"id\": 13,\n                    \"product_id\": 4,\n                    \"name\": \"Lengan Panjang XL\",\n                    \"sku\": \"JKT-INF-LG-XL\",\n                    \"price\": \"145000.00\",\n                    \"stock\": 12,\n                    \"created_at\": \"2025-10-31T07:39:07.000000Z\",\n                    \"updated_at\": \"2025-10-31T07:39:07.000000Z\"\n                },\n                {\n                    \"id\": 14,\n                    \"product_id\": 4,\n                    \"name\": \"Lengan Panjang XXL\",\n                    \"sku\": \"JKT-INF-LG-XXL\",\n                    \"price\": \"150000.00\",\n                    \"stock\": 10,\n                    \"created_at\": \"2025-10-31T07:39:39.000000Z\",\n                    \"updated_at\": \"2025-10-31T07:39:39.000000Z\"\n                }\n            ],\n            \"galleries\": [\n                {\n                    \"id\": 8,\n                    \"product_id\": 4,\n                    \"image\": \"product-galleries/20251031_084605_j1G1qBPq.png\",\n                    \"created_at\": \"2025-10-31T08:46:05.000000Z\",\n                    \"updated_at\": \"2025-10-31T08:46:05.000000Z\"\n                },\n                {\n                    \"id\": 9,\n                    \"product_id\": 4,\n                    \"image\": \"product-galleries/20251031_084615_rT7Ywp9o.png\",\n                    \"created_at\": \"2025-10-31T08:46:15.000000Z\",\n                    \"updated_at\": \"2025-10-31T08:46:15.000000Z\"\n                }\n            ]\n        }\n    ]\n}"
                             }
                         }
                     }
                 }
             }
         },
-        "/product/{id}": {
-            "get": {
-                "tags": ["products"],
-                "summary": "detail product",
-                "security": [
-                    {
-                        "noauthAuth": []
-                    }
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "schema": {
-                            "type": "integer"
-                        },
-                        "required": true,
-                        "example": "1"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "headers": {
-                            "Server": {
-                                "schema": {
-                                    "type": "number",
-                                    "example": "nginx/1.25.4"
-                                }
-                            },
-                            "Content-Type": {
-                                "schema": {
-                                    "type": "string",
-                                    "example": "application/json"
-                                }
-                            },
-                            "Transfer-Encoding": {
-                                "schema": {
-                                    "type": "string",
-                                    "example": "chunked"
-                                }
-                            },
-                            "Connection": {
-                                "schema": {
-                                    "type": "string",
-                                    "example": "keep-alive"
-                                }
-                            },
-                            "Vary": {
-                                "schema": {
-                                    "type": "string",
-                                    "example": "Accept-Encoding"
-                                }
-                            },
-                            "X-Powered-By": {
-                                "schema": {
-                                    "type": "number",
-                                    "example": "PHP/8.4.13"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string",
-                                    "example": "no-cache, private"
-                                }
-                            },
-                            "Date": {
-                                "schema": {
-                                    "type": "string",
-                                    "example": "Sat, 01 Nov 2025 03:14:39 GMT"
-                                }
-                            },
-                            "Access-Control-Allow-Origin": {
-                                "schema": {
-                                    "type": "string",
-                                    "example": "*"
-                                }
-                            },
-                            "Content-Encoding": {
-                                "schema": {
-                                    "type": "string",
-                                    "example": "gzip"
-                                }
-                            }
-                        },
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "type": "string"
-                                },
-                                "example": "{\n    \"success\": true,\n    \"message\": \"Product fetched successfully.\",\n    \"data\": {\n        \"id\": 1,\n        \"product_category_id\": 1,\n        \"image\": \"products/20251031_054429_HfYrxQYe.png\",\n        \"name\": \"T-shirt Javascript Pria | Wanita Baju Web Programmer IT Geek Combed 24s\",\n        \"slug\": \"t-shirt-javascript-pria-wanita-baju-web-programmer-it-geek-combed-24s\",\n        \"description\": \"Hi, Selamat Datang Di IF Merch, nikmati beragam product kami dengan kualitas yang premium!!  IF merch adalah Product Merchandise dari Himpunan Mahasiswa Informatika, Product yang akan di launching ini memiliki nilai modis dan trendy bagi anak IT.\",\n        \"status\": \"released\",\n        \"created_at\": \"2025-10-31T05:44:29.000000Z\",\n        \"updated_at\": \"2025-10-31T05:46:07.000000Z\",\n        \"category\": {\n            \"id\": 1,\n            \"name\": \"Pakaian\",\n            \"slug\": \"pakaian\",\n            \"created_at\": \"2025-10-31T05:39:51.000000Z\",\n            \"updated_at\": \"2025-10-31T05:39:51.000000Z\"\n        },\n        \"variants\": [\n            {\n                \"id\": 1,\n                \"product_id\": 1,\n                \"name\": \"Lengan Pendek M\",\n                \"sku\": \"SHRT-JS-LK-M\",\n                \"price\": \"89000.00\",\n                \"stock\": 10,\n                \"created_at\": \"2025-10-31T07:27:24.000000Z\",\n                \"updated_at\": \"2025-10-31T07:27:24.000000Z\"\n            },\n            {\n                \"id\": 2,\n                \"product_id\": 1,\n                \"name\": \"Lengan Pendek L\",\n                \"sku\": \"SHRT-JS-LK-L\",\n                \"price\": \"89000.00\",\n                \"stock\": 10,\n                \"created_at\": \"2025-10-31T07:28:28.000000Z\",\n                \"updated_at\": \"2025-10-31T07:28:28.000000Z\"\n            },\n            {\n                \"id\": 3,\n                \"product_id\": 1,\n                \"name\": \"Lengan Pendek XL\",\n                \"sku\": \"SHRT-JS-LK-XL\",\n                \"price\": \"89000.00\",\n                \"stock\": 10,\n                \"created_at\": \"2025-10-31T07:29:21.000000Z\",\n                \"updated_at\": \"2025-10-31T07:29:21.000000Z\"\n            },\n            {\n                \"id\": 4,\n                \"product_id\": 1,\n                \"name\": \"Lengan Pendek XXL\",\n                \"sku\": \"SHRT-JS-LK-XXL\",\n                \"price\": \"95000.00\",\n                \"stock\": 10,\n                \"created_at\": \"2025-10-31T07:30:03.000000Z\",\n                \"updated_at\": \"2025-10-31T07:30:03.000000Z\"\n            },\n            {\n                \"id\": 5,\n                \"product_id\": 1,\n                \"name\": \"Lengan Pendek XXXL\",\n                \"sku\": \"SHRT-JS-LK-XXXL\",\n                \"price\": \"100000.00\",\n                \"stock\": 10,\n                \"created_at\": \"2025-10-31T07:30:24.000000Z\",\n                \"updated_at\": \"2025-10-31T07:30:24.000000Z\"\n            }\n        ],\n        \"galleries\": [\n            {\n                \"id\": 2,\n                \"product_id\": 1,\n                \"image\": \"product-galleries/20251031_084436_aVxiWxOL.jpg\",\n                \"created_at\": \"2025-10-31T08:44:36.000000Z\",\n                \"updated_at\": \"2025-10-31T08:44:36.000000Z\"\n            },\n            {\n                \"id\": 3,\n                \"product_id\": 1,\n                \"image\": \"product-galleries/20251031_084453_watCMcvK.jpg\",\n                \"created_at\": \"2025-10-31T08:44:53.000000Z\",\n                \"updated_at\": \"2025-10-31T08:44:53.000000Z\"\n            },\n            {\n                \"id\": 5,\n                \"product_id\": 1,\n                \"image\": \"product-galleries/20251031_084535_vD6Snusq.jpg\",\n                \"created_at\": \"2025-10-31T08:45:35.000000Z\",\n                \"updated_at\": \"2025-10-31T08:45:35.000000Z\"\n            }\n        ]\n    }\n}"
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/transactions": {
+        "/cart": {
             "post": {
-                "tags": ["transactions"],
+                "tags": ["cart"],
                 "summary": "create",
                 "requestBody": {
                     "content": {
@@ -1781,12 +1312,9 @@
                             "schema": {
                                 "type": "object",
                                 "example": {
-                                    "items": [
-                                        {
-                                            "product_variant_id": 3,
-                                            "quantity": 2
-                                        }
-                                    ]
+                                    "product_id": 1,
+                                    "product_variant_id": 1,
+                                    "quantity": 1
                                 }
                             }
                         }
@@ -1846,13 +1374,591 @@
                             "Date": {
                                 "schema": {
                                     "type": "string",
-                                    "example": "Fri, 31 Oct 2025 13:51:29 GMT"
+                                    "example": "Wed, 19 Nov 2025 13:30:31 GMT"
                                 }
                             },
                             "Access-Control-Allow-Origin": {
                                 "schema": {
                                     "type": "string",
-                                    "example": "*"
+                                    "example": "http://localhost:3000"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
+                                }
+                            },
+                            "Content-Encoding": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "gzip"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "message": "Product successfully added to cart."
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": ["cart"],
+                "summary": "list",
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                            "Server": {
+                                "schema": {
+                                    "type": "number",
+                                    "example": "nginx/1.25.4"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json"
+                                }
+                            },
+                            "Transfer-Encoding": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "chunked"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Vary": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Accept-Encoding"
+                                }
+                            },
+                            "X-Powered-By": {
+                                "schema": {
+                                    "type": "number",
+                                    "example": "PHP/8.4.13"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-cache, private"
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Wed, 19 Nov 2025 13:30:42 GMT"
+                                }
+                            },
+                            "Access-Control-Allow-Origin": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "http://localhost:3000"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
+                                }
+                            },
+                            "Content-Encoding": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "gzip"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "success": true,
+                                    "message": "Cart fetched successfully.",
+                                    "data": [
+                                        {
+                                            "id": 18,
+                                            "user_id": 9,
+                                            "product_id": 1,
+                                            "product_variant_id": 1,
+                                            "quantity": 1,
+                                            "is_checked": 0,
+                                            "created_at": "2025-11-19T13:30:31.000000Z",
+                                            "updated_at": "2025-11-19T13:30:31.000000Z",
+                                            "product": {
+                                                "id": 1,
+                                                "product_category_id": 1,
+                                                "image": "products/20251031_054429_HfYrxQYe.png",
+                                                "name": "T-shirt Javascript",
+                                                "slug": "t-shirt-javascript",
+                                                "description": "Hi, Selamat Datang Di IF Merch, nikmati beragam product kami dengan kualitas yang premium!!  IF merch adalah Product Merchandise dari Himpunan Mahasiswa Informatika, Product yang akan di launching ini memiliki nilai modis dan trendy bagi anak IT.",
+                                                "status": "released",
+                                                "created_at": "2025-10-31T05:44:29.000000Z",
+                                                "updated_at": "2025-11-07T12:22:46.000000Z"
+                                            },
+                                            "variant": {
+                                                "id": 1,
+                                                "product_id": 1,
+                                                "name": "Lengan Pendek M",
+                                                "sku": "SHRT-JS-LK-M",
+                                                "price": "89000.00",
+                                                "stock": 10,
+                                                "created_at": "2025-10-31T07:27:24.000000Z",
+                                                "updated_at": "2025-10-31T07:27:24.000000Z"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/update-qty/{id}": {
+            "put": {
+                "tags": ["cart"],
+                "summary": "update-qty",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "quantity": 3
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true,
+                        "example": "18"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                            "Server": {
+                                "schema": {
+                                    "type": "number",
+                                    "example": "nginx/1.25.4"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json"
+                                }
+                            },
+                            "Transfer-Encoding": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "chunked"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Vary": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Accept-Encoding"
+                                }
+                            },
+                            "X-Powered-By": {
+                                "schema": {
+                                    "type": "number",
+                                    "example": "PHP/8.4.13"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-cache, private"
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Wed, 19 Nov 2025 13:31:12 GMT"
+                                }
+                            },
+                            "Access-Control-Allow-Origin": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "http://localhost:3000"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
+                                }
+                            },
+                            "Content-Encoding": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "gzip"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "message": "Cart successfully updated"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/update-check/{id}": {
+            "put": {
+                "tags": ["cart"],
+                "summary": "update-check",
+                "requestBody": {
+                    "content": {}
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true,
+                        "example": "18"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                            "Server": {
+                                "schema": {
+                                    "type": "number",
+                                    "example": "nginx/1.25.4"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json"
+                                }
+                            },
+                            "Transfer-Encoding": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "chunked"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Vary": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Accept-Encoding"
+                                }
+                            },
+                            "X-Powered-By": {
+                                "schema": {
+                                    "type": "number",
+                                    "example": "PHP/8.4.13"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-cache, private"
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Wed, 19 Nov 2025 13:31:39 GMT"
+                                }
+                            },
+                            "Access-Control-Allow-Origin": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "http://localhost:3000"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
+                                }
+                            },
+                            "Content-Encoding": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "gzip"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "message": "Cart successfully updated"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/cart/{id}": {
+            "delete": {
+                "tags": ["cart"],
+                "summary": "delete",
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true,
+                        "example": "18"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                            "Server": {
+                                "schema": {
+                                    "type": "number",
+                                    "example": "nginx/1.25.4"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json"
+                                }
+                            },
+                            "Transfer-Encoding": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "chunked"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Vary": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Accept-Encoding"
+                                }
+                            },
+                            "X-Powered-By": {
+                                "schema": {
+                                    "type": "number",
+                                    "example": "PHP/8.4.13"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-cache, private"
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Wed, 19 Nov 2025 13:31:56 GMT"
+                                }
+                            },
+                            "Access-Control-Allow-Origin": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "http://localhost:3000"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
+                                }
+                            },
+                            "Content-Encoding": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "gzip"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "message": "Product successfully removed from cart"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/transactions": {
+            "post": {
+                "tags": ["transactions"],
+                "summary": "create",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "items": [
+                                        {
+                                            "product_variant_id": 2,
+                                            "quantity": 1
+                                        },
+                                        {
+                                            "product_variant_id": 12,
+                                            "quantity": 1
+                                        }
+                                    ],
+                                    "note": "Jl SRIKOYO LINGK GLISAT RT 5 RW 4 (depan toko mundu terang), Patrang, Kab. Jember, Jawa Timur, 6281515018396"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                            "Server": {
+                                "schema": {
+                                    "type": "number",
+                                    "example": "nginx/1.25.4"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json"
+                                }
+                            },
+                            "Transfer-Encoding": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "chunked"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Vary": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Accept-Encoding"
+                                }
+                            },
+                            "X-Powered-By": {
+                                "schema": {
+                                    "type": "number",
+                                    "example": "PHP/8.4.13"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-cache, private"
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Wed, 19 Nov 2025 13:32:43 GMT"
+                                }
+                            },
+                            "Access-Control-Allow-Origin": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "http://localhost:3000"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
                                 }
                             },
                             "Content-Encoding": {
@@ -1870,36 +1976,54 @@
                                 "example": {
                                     "message": "Transaction created successfully.",
                                     "transaction": {
-                                        "user_id": 3,
-                                        "invoice_number": "INV-YYV9HVPSG1",
-                                        "total_amount": 178000,
+                                        "user_id": 9,
+                                        "invoice_number": "INV-YQCUREFVRX",
+                                        "total_amount": 229000,
                                         "status": "pending",
                                         "payment_status": "waiting",
-                                        "midtrans_order_id": "ORDER-1T7L8EP2TC",
-                                        "updated_at": "2025-10-31T13:51:29.000000Z",
-                                        "created_at": "2025-10-31T13:51:29.000000Z",
-                                        "id": 11,
-                                        "midtrans_snap_token": "0386ae81-cac1-4fbd-be83-709548e77b56",
+                                        "midtrans_order_id": "ORDER-9MIE7ZJZWB",
+                                        "notes": "The items were sent to Jl SRIKOYO LINGK GLISAT RT 5 RW 4 (depan toko mundu terang), Patrang, Kab. Jember, Jawa Timur, 6281515018396",
+                                        "updated_at": "2025-11-19T13:32:43.000000Z",
+                                        "created_at": "2025-11-19T13:32:43.000000Z",
+                                        "id": 36,
+                                        "midtrans_snap_token": "b5e41f49-fe22-4421-84b7-670e42229527",
                                         "items": [
                                             {
-                                                "id": 19,
-                                                "transaction_id": 11,
+                                                "id": 31,
+                                                "transaction_id": 36,
                                                 "product_id": 1,
-                                                "product_variant_id": 3,
-                                                "product_name": "T-shirt Javascript Pria | Wanita Baju Web Programmer IT Geek Combed 24s",
-                                                "variant_name": "Lengan Pendek XL",
-                                                "sku": "SHRT-JS-LK-XL",
+                                                "product_variant_id": 2,
+                                                "product_image": "products/20251031_054429_HfYrxQYe.png",
+                                                "product_name": "T-shirt Javascript",
+                                                "variant_name": "Lengan Pendek L",
+                                                "sku": "SHRT-JS-LK-L",
                                                 "price": "89000.00",
-                                                "quantity": 2,
-                                                "subtotal": "178000.00",
-                                                "product_snapshot": "{\"product\":{\"id\":1,\"name\":\"T-shirt Javascript Pria | Wanita Baju Web Programmer IT Geek Combed 24s\",\"description\":\"Hi, Selamat Datang Di IF Merch, nikmati beragam product kami dengan kualitas yang premium!!  IF merch adalah Product Merchandise dari Himpunan Mahasiswa Informatika, Product yang akan di launching ini memiliki nilai modis dan trendy bagi anak IT.\"},\"variant\":{\"id\":3,\"name\":\"Lengan Pendek XL\",\"sku\":\"SHRT-JS-LK-XL\",\"price\":\"89000.00\"}}",
-                                                "created_at": "2025-10-31T13:51:29.000000Z",
-                                                "updated_at": "2025-10-31T13:51:29.000000Z"
+                                                "quantity": 1,
+                                                "subtotal": "89000.00",
+                                                "product_snapshot": "{\"product\":{\"id\":1,\"name\":\"T-shirt Javascript\",\"description\":\"Hi, Selamat Datang Di IF Merch, nikmati beragam product kami dengan kualitas yang premium!!  IF merch adalah Product Merchandise dari Himpunan Mahasiswa Informatika, Product yang akan di launching ini memiliki nilai modis dan trendy bagi anak IT.\"},\"variant\":{\"id\":2,\"name\":\"Lengan Pendek L\",\"sku\":\"SHRT-JS-LK-L\",\"price\":\"89000.00\"}}",
+                                                "created_at": "2025-11-19T13:32:43.000000Z",
+                                                "updated_at": "2025-11-19T13:32:43.000000Z"
+                                            },
+                                            {
+                                                "id": 32,
+                                                "transaction_id": 36,
+                                                "product_id": 4,
+                                                "product_variant_id": 12,
+                                                "product_image": "products/20251107_142234_JP7N9pSb.png",
+                                                "product_name": "Jacket Informatics",
+                                                "variant_name": "CRM | Lengan Panjang L",
+                                                "sku": "JKT-INF-LG-L-CRM",
+                                                "price": "140000.00",
+                                                "quantity": 1,
+                                                "subtotal": "140000.00",
+                                                "product_snapshot": "{\"product\":{\"id\":4,\"name\":\"Jacket Informatics\",\"description\":\"Hi, Selamat Datang Di IF Merch, nikmati beragam product kami dengan kualitas yang premium!!  IF merch adalah Product Merchandise dari Himpunan Mahasiswa Informatika, Product yang akan di launching ini memiliki nilai modis dan trendy bagi anak IT.\"},\"variant\":{\"id\":12,\"name\":\"CRM | Lengan Panjang L\",\"sku\":\"JKT-INF-LG-L-CRM\",\"price\":\"140000.00\"}}",
+                                                "created_at": "2025-11-19T13:32:43.000000Z",
+                                                "updated_at": "2025-11-19T13:32:43.000000Z"
                                             }
                                         ]
                                     },
-                                    "snap_token": "0386ae81-cac1-4fbd-be83-709548e77b56",
-                                    "redirect_url": "https://app.sandbox.midtrans.com/snap/v4/redirection/0386ae81-cac1-4fbd-be83-709548e77b56"
+                                    "snap_token": "b5e41f49-fe22-4421-84b7-670e42229527",
+                                    "redirect_url": "https://app.sandbox.midtrans.com/snap/v4/redirection/b5e41f49-fe22-4421-84b7-670e42229527"
                                 }
                             }
                         }
@@ -1963,13 +2087,19 @@
                             "Date": {
                                 "schema": {
                                     "type": "string",
-                                    "example": "Fri, 31 Oct 2025 13:51:35 GMT"
+                                    "example": "Wed, 19 Nov 2025 13:33:12 GMT"
                                 }
                             },
                             "Access-Control-Allow-Origin": {
                                 "schema": {
                                     "type": "string",
-                                    "example": "*"
+                                    "example": "http://localhost:3000"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
                                 }
                             },
                             "Content-Encoding": {
@@ -1984,45 +2114,66 @@
                                 "schema": {
                                     "type": "object"
                                 },
-                                "example": [
-                                    {
-                                        "id": 11,
-                                        "user_id": 3,
-                                        "invoice_number": "INV-YYV9HVPSG1",
-                                        "total_amount": "178000.00",
-                                        "status": "pending",
-                                        "payment_method": null,
-                                        "payment_status": "waiting",
-                                        "payment_type": null,
-                                        "paid_at": null,
-                                        "canceled_at": null,
-                                        "completed_at": null,
-                                        "notes": null,
-                                        "midtrans_payload": null,
-                                        "midtrans_order_id": "ORDER-1T7L8EP2TC",
-                                        "midtrans_transaction_id": null,
-                                        "midtrans_snap_token": "0386ae81-cac1-4fbd-be83-709548e77b56",
-                                        "created_at": "2025-10-31T13:51:29.000000Z",
-                                        "updated_at": "2025-10-31T13:51:29.000000Z",
-                                        "items": [
-                                            {
-                                                "id": 19,
-                                                "transaction_id": 11,
-                                                "product_id": 1,
-                                                "product_variant_id": 3,
-                                                "product_name": "T-shirt Javascript Pria | Wanita Baju Web Programmer IT Geek Combed 24s",
-                                                "variant_name": "Lengan Pendek XL",
-                                                "sku": "SHRT-JS-LK-XL",
-                                                "price": "89000.00",
-                                                "quantity": 2,
-                                                "subtotal": "178000.00",
-                                                "product_snapshot": "{\"product\":{\"id\":1,\"name\":\"T-shirt Javascript Pria | Wanita Baju Web Programmer IT Geek Combed 24s\",\"description\":\"Hi, Selamat Datang Di IF Merch, nikmati beragam product kami dengan kualitas yang premium!!  IF merch adalah Product Merchandise dari Himpunan Mahasiswa Informatika, Product yang akan di launching ini memiliki nilai modis dan trendy bagi anak IT.\"},\"variant\":{\"id\":3,\"name\":\"Lengan Pendek XL\",\"sku\":\"SHRT-JS-LK-XL\",\"price\":\"89000.00\"}}",
-                                                "created_at": "2025-10-31T13:51:29.000000Z",
-                                                "updated_at": "2025-10-31T13:51:29.000000Z"
-                                            }
-                                        ]
-                                    }
-                                ]
+                                "example": {
+                                    "success": true,
+                                    "message": "Transactions fetched succesfully",
+                                    "data": [
+                                        {
+                                            "id": 36,
+                                            "user_id": 9,
+                                            "invoice_number": "INV-YQCUREFVRX",
+                                            "total_amount": "229000.00",
+                                            "status": "pending",
+                                            "payment_method": null,
+                                            "payment_status": "waiting",
+                                            "payment_type": null,
+                                            "paid_at": null,
+                                            "canceled_at": null,
+                                            "completed_at": null,
+                                            "notes": "The items were sent to Jl SRIKOYO LINGK GLISAT RT 5 RW 4 (depan toko mundu terang), Patrang, Kab. Jember, Jawa Timur, 6281515018396",
+                                            "midtrans_payload": null,
+                                            "midtrans_order_id": "ORDER-9MIE7ZJZWB",
+                                            "midtrans_transaction_id": null,
+                                            "midtrans_snap_token": "b5e41f49-fe22-4421-84b7-670e42229527",
+                                            "created_at": "2025-11-19T13:32:43.000000Z",
+                                            "updated_at": "2025-11-19T13:32:43.000000Z",
+                                            "items": [
+                                                {
+                                                    "id": 31,
+                                                    "transaction_id": 36,
+                                                    "product_id": 1,
+                                                    "product_variant_id": 2,
+                                                    "product_image": "products/20251031_054429_HfYrxQYe.png",
+                                                    "product_name": "T-shirt Javascript",
+                                                    "variant_name": "Lengan Pendek L",
+                                                    "sku": "SHRT-JS-LK-L",
+                                                    "price": "89000.00",
+                                                    "quantity": 1,
+                                                    "subtotal": "89000.00",
+                                                    "product_snapshot": "{\"product\":{\"id\":1,\"name\":\"T-shirt Javascript\",\"description\":\"Hi, Selamat Datang Di IF Merch, nikmati beragam product kami dengan kualitas yang premium!!  IF merch adalah Product Merchandise dari Himpunan Mahasiswa Informatika, Product yang akan di launching ini memiliki nilai modis dan trendy bagi anak IT.\"},\"variant\":{\"id\":2,\"name\":\"Lengan Pendek L\",\"sku\":\"SHRT-JS-LK-L\",\"price\":\"89000.00\"}}",
+                                                    "created_at": "2025-11-19T13:32:43.000000Z",
+                                                    "updated_at": "2025-11-19T13:32:43.000000Z"
+                                                },
+                                                {
+                                                    "id": 32,
+                                                    "transaction_id": 36,
+                                                    "product_id": 4,
+                                                    "product_variant_id": 12,
+                                                    "product_image": "products/20251107_142234_JP7N9pSb.png",
+                                                    "product_name": "Jacket Informatics",
+                                                    "variant_name": "CRM | Lengan Panjang L",
+                                                    "sku": "JKT-INF-LG-L-CRM",
+                                                    "price": "140000.00",
+                                                    "quantity": 1,
+                                                    "subtotal": "140000.00",
+                                                    "product_snapshot": "{\"product\":{\"id\":4,\"name\":\"Jacket Informatics\",\"description\":\"Hi, Selamat Datang Di IF Merch, nikmati beragam product kami dengan kualitas yang premium!!  IF merch adalah Product Merchandise dari Himpunan Mahasiswa Informatika, Product yang akan di launching ini memiliki nilai modis dan trendy bagi anak IT.\"},\"variant\":{\"id\":12,\"name\":\"CRM | Lengan Panjang L\",\"sku\":\"JKT-INF-LG-L-CRM\",\"price\":\"140000.00\"}}",
+                                                    "created_at": "2025-11-19T13:32:43.000000Z",
+                                                    "updated_at": "2025-11-19T13:32:43.000000Z"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
                             }
                         }
                     }
@@ -2046,7 +2197,7 @@
                             "type": "integer"
                         },
                         "required": true,
-                        "example": "11"
+                        "example": "36"
                     }
                 ],
                 "responses": {
@@ -2098,13 +2249,19 @@
                             "Date": {
                                 "schema": {
                                     "type": "string",
-                                    "example": "Sat, 01 Nov 2025 03:15:09 GMT"
+                                    "example": "Wed, 19 Nov 2025 13:33:49 GMT"
                                 }
                             },
                             "Access-Control-Allow-Origin": {
                                 "schema": {
                                     "type": "string",
-                                    "example": "*"
+                                    "example": "http://localhost:3000"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
                                 }
                             },
                             "Content-Encoding": {
@@ -2120,41 +2277,62 @@
                                     "type": "object"
                                 },
                                 "example": {
-                                    "id": 11,
-                                    "user_id": 3,
-                                    "invoice_number": "INV-YYV9HVPSG1",
-                                    "total_amount": "178000.00",
-                                    "status": "pending",
-                                    "payment_method": null,
-                                    "payment_status": "waiting",
-                                    "payment_type": null,
-                                    "paid_at": null,
-                                    "canceled_at": null,
-                                    "completed_at": null,
-                                    "notes": null,
-                                    "midtrans_payload": null,
-                                    "midtrans_order_id": "ORDER-1T7L8EP2TC",
-                                    "midtrans_transaction_id": null,
-                                    "midtrans_snap_token": "0386ae81-cac1-4fbd-be83-709548e77b56",
-                                    "created_at": "2025-10-31T13:51:29.000000Z",
-                                    "updated_at": "2025-10-31T13:51:29.000000Z",
-                                    "items": [
-                                        {
-                                            "id": 19,
-                                            "transaction_id": 11,
-                                            "product_id": 1,
-                                            "product_variant_id": 3,
-                                            "product_name": "T-shirt Javascript Pria | Wanita Baju Web Programmer IT Geek Combed 24s",
-                                            "variant_name": "Lengan Pendek XL",
-                                            "sku": "SHRT-JS-LK-XL",
-                                            "price": "89000.00",
-                                            "quantity": 2,
-                                            "subtotal": "178000.00",
-                                            "product_snapshot": "{\"product\":{\"id\":1,\"name\":\"T-shirt Javascript Pria | Wanita Baju Web Programmer IT Geek Combed 24s\",\"description\":\"Hi, Selamat Datang Di IF Merch, nikmati beragam product kami dengan kualitas yang premium!!  IF merch adalah Product Merchandise dari Himpunan Mahasiswa Informatika, Product yang akan di launching ini memiliki nilai modis dan trendy bagi anak IT.\"},\"variant\":{\"id\":3,\"name\":\"Lengan Pendek XL\",\"sku\":\"SHRT-JS-LK-XL\",\"price\":\"89000.00\"}}",
-                                            "created_at": "2025-10-31T13:51:29.000000Z",
-                                            "updated_at": "2025-10-31T13:51:29.000000Z"
-                                        }
-                                    ]
+                                    "success": true,
+                                    "message": "Transactions detail fetched succesfully",
+                                    "data": {
+                                        "id": 36,
+                                        "user_id": 9,
+                                        "invoice_number": "INV-YQCUREFVRX",
+                                        "total_amount": "229000.00",
+                                        "status": "pending",
+                                        "payment_method": null,
+                                        "payment_status": "waiting",
+                                        "payment_type": null,
+                                        "paid_at": null,
+                                        "canceled_at": null,
+                                        "completed_at": null,
+                                        "notes": "The items were sent to Jl SRIKOYO LINGK GLISAT RT 5 RW 4 (depan toko mundu terang), Patrang, Kab. Jember, Jawa Timur, 6281515018396",
+                                        "midtrans_payload": null,
+                                        "midtrans_order_id": "ORDER-9MIE7ZJZWB",
+                                        "midtrans_transaction_id": null,
+                                        "midtrans_snap_token": "b5e41f49-fe22-4421-84b7-670e42229527",
+                                        "created_at": "2025-11-19T13:32:43.000000Z",
+                                        "updated_at": "2025-11-19T13:32:43.000000Z",
+                                        "items": [
+                                            {
+                                                "id": 31,
+                                                "transaction_id": 36,
+                                                "product_id": 1,
+                                                "product_variant_id": 2,
+                                                "product_image": "products/20251031_054429_HfYrxQYe.png",
+                                                "product_name": "T-shirt Javascript",
+                                                "variant_name": "Lengan Pendek L",
+                                                "sku": "SHRT-JS-LK-L",
+                                                "price": "89000.00",
+                                                "quantity": 1,
+                                                "subtotal": "89000.00",
+                                                "product_snapshot": "{\"product\":{\"id\":1,\"name\":\"T-shirt Javascript\",\"description\":\"Hi, Selamat Datang Di IF Merch, nikmati beragam product kami dengan kualitas yang premium!!  IF merch adalah Product Merchandise dari Himpunan Mahasiswa Informatika, Product yang akan di launching ini memiliki nilai modis dan trendy bagi anak IT.\"},\"variant\":{\"id\":2,\"name\":\"Lengan Pendek L\",\"sku\":\"SHRT-JS-LK-L\",\"price\":\"89000.00\"}}",
+                                                "created_at": "2025-11-19T13:32:43.000000Z",
+                                                "updated_at": "2025-11-19T13:32:43.000000Z"
+                                            },
+                                            {
+                                                "id": 32,
+                                                "transaction_id": 36,
+                                                "product_id": 4,
+                                                "product_variant_id": 12,
+                                                "product_image": "products/20251107_142234_JP7N9pSb.png",
+                                                "product_name": "Jacket Informatics",
+                                                "variant_name": "CRM | Lengan Panjang L",
+                                                "sku": "JKT-INF-LG-L-CRM",
+                                                "price": "140000.00",
+                                                "quantity": 1,
+                                                "subtotal": "140000.00",
+                                                "product_snapshot": "{\"product\":{\"id\":4,\"name\":\"Jacket Informatics\",\"description\":\"Hi, Selamat Datang Di IF Merch, nikmati beragam product kami dengan kualitas yang premium!!  IF merch adalah Product Merchandise dari Himpunan Mahasiswa Informatika, Product yang akan di launching ini memiliki nilai modis dan trendy bagi anak IT.\"},\"variant\":{\"id\":12,\"name\":\"CRM | Lengan Panjang L\",\"sku\":\"JKT-INF-LG-L-CRM\",\"price\":\"140000.00\"}}",
+                                                "created_at": "2025-11-19T13:32:43.000000Z",
+                                                "updated_at": "2025-11-19T13:32:43.000000Z"
+                                            }
+                                        ]
+                                    }
                                 }
                             }
                         }
