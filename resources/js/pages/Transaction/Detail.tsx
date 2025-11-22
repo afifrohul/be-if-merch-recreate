@@ -79,7 +79,6 @@ interface TransactionProps {
 }
 
 export default function Detail({ transaction }: TransactionProps) {
-    console.log(transaction);
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Product" />
@@ -120,7 +119,7 @@ export default function Detail({ transaction }: TransactionProps) {
                                         {transaction.user.profile.phone_number}
                                     </p>
                                 </div>
-                                <div className="flex flex-col text-sm gap-2">
+                                <div className="flex flex-col gap-2 text-sm">
                                     <p className="font-semibold">
                                         Deliver Address
                                     </p>
@@ -268,6 +267,36 @@ export default function Detail({ transaction }: TransactionProps) {
                                                     Completed
                                                 </div>
                                             </div>
+                                        ) : (
+                                            <span>-</span>
+                                        )}
+                                    </p>
+                                </div>
+                                <div className="flex justify-between text-sm">
+                                    <p className="font-semibold">Paid Date</p>
+                                    <p>
+                                        {transaction.paid_at ? (
+                                            format(
+                                                new Date(transaction.paid_at),
+                                                'MMMM dd, yyyy H:ii:ss',
+                                            )
+                                        ) : (
+                                            <span>-</span>
+                                        )}
+                                    </p>
+                                </div>
+                                <div className="flex justify-between text-sm">
+                                    <p className="font-semibold">
+                                        Canceled Date
+                                    </p>
+                                    <p>
+                                        {transaction.canceled_at ? (
+                                            format(
+                                                new Date(
+                                                    transaction.canceled_at,
+                                                ),
+                                                'MMMM dd, yyyy H:ii:ss',
+                                            )
                                         ) : (
                                             <span>-</span>
                                         )}
