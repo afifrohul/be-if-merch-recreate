@@ -20,7 +20,7 @@ import {
     FileClockIcon,
     FileX2Icon,
     LayoutGrid,
-    ShoppingCart,
+    ShoppingBag,
     SquareDashedBottomCodeIcon,
     TableOfContents,
     User,
@@ -52,7 +52,7 @@ const mainNavItems: NavItem[] = [
     {
         title: 'Products',
         href: '/products',
-        icon: ShoppingCart,
+        icon: ShoppingBag,
     },
     {
         title: 'Products Variant',

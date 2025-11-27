@@ -4,6 +4,7 @@ import AppLayout from '@/layouts/app-layout';
 import { type BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/react';
 import type { ColumnDef } from '@tanstack/react-table';
+import { format } from 'date-fns';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -39,7 +40,10 @@ export default function Index({ users }: UserIndexProps) {
             accessorKey: 'created_at',
             header: 'Created At',
             cell: (info) =>
-                new Date(info.getValue() as string).toLocaleDateString(),
+                format(
+                    new Date(info.getValue() as string),
+                    'MMMM dd, yyyy H:ii:ss',
+                ),
         },
         {
             id: 'actions',

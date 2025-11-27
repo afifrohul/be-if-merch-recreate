@@ -302,6 +302,23 @@ export default function Detail({ transaction }: TransactionProps) {
                                         )}
                                     </p>
                                 </div>
+                                <div className="flex justify-between text-sm">
+                                    <p className="font-semibold">
+                                        Completed Date
+                                    </p>
+                                    <p>
+                                        {transaction.completed_at ? (
+                                            format(
+                                                new Date(
+                                                    transaction.completed_at,
+                                                ),
+                                                'MMMM dd, yyyy H:ii:ss',
+                                            )
+                                        ) : (
+                                            <span>-</span>
+                                        )}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                         <Separator className="my-4"></Separator>
