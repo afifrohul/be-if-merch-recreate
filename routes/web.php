@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\FAQController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
@@ -20,6 +21,9 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 
     Route::get('/product-categories', [ProductCategoryController::class, 'index'])->name('product-categories.index');
     Route::get('/product-categories/create', [ProductCategoryController::class, 'create'])->name('product-categories.create');

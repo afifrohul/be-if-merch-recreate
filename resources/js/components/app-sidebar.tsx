@@ -23,15 +23,27 @@ import {
     ShoppingCart,
     SquareDashedBottomCodeIcon,
     TableOfContents,
+    User,
 } from 'lucide-react';
 import AppLogo from './app-logo';
 
-const mainNavItems: NavItem[] = [
+const dashboards: NavItem[] = [
     {
         title: 'Dashboard',
         href: dashboard(),
         icon: LayoutGrid,
     },
+];
+
+const users: NavItem[] = [
+    {
+        title: 'User Customer',
+        href: '/users',
+        icon: User,
+    },
+];
+
+const mainNavItems: NavItem[] = [
     {
         title: 'Products Category',
         href: '/product-categories',
@@ -101,6 +113,8 @@ export function AppSidebar() {
             </SidebarHeader>
 
             <SidebarContent>
+                <NavMain items={dashboards} header="Dashboard" />
+                <NavMain items={users} header="User" />
                 <NavMain items={mainNavItems} header="Master Data" />
                 <NavMain items={transactions} header="Transactions" />
                 <NavMain items={apis} header="Documentation API" />
