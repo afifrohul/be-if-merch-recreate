@@ -33,6 +33,9 @@ class DashboardController extends Controller
                 'product_categories.name as category',
                 \DB::raw('CAST(SUM(transaction_items.quantity) AS UNSIGNED) as total_quantity')
             )
+            ->whereHas('transaction', function ($query) {
+                $query->where('payment_status', 'paid');
+            })
             ->groupBy('product_categories.name')
             ->get();
 
