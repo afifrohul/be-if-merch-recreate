@@ -42,7 +42,7 @@ export default function Index({ users }: UserIndexProps) {
             cell: (info) =>
                 format(
                     new Date(info.getValue() as string),
-                    'MMMM dd, yyyy H:ii:ss',
+                    'MMMM dd, yyyy HH:mm:ss',
                 ),
         },
         {

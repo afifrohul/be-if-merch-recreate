@@ -123,7 +123,7 @@ export default function Failed({ transactions }: TransactionProps) {
             cell: ({ row }) => {
                 const issued = format(
                     new Date(row.original.created_at),
-                    'MMMM dd, yyyy H:ii:ss',
+                    'MMMM dd, yyyy HH:mm:ss',
                 );
                 return issued;
             },

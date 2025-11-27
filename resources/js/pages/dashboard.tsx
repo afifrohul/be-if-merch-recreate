@@ -139,6 +139,7 @@ export default function Dashboard({ ...props }) {
                                         label
                                     >
                                         {props.transactionByCategory.map(
+                                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
                                             (entry: any, index: number) => (
                                                 <Cell
                                                     key={`cell-${index}`}

@@ -132,7 +132,7 @@ export default function Detail({ transaction }: TransactionProps) {
                                     <p>
                                         {format(
                                             new Date(transaction.created_at),
-                                            'MMMM dd, yyyy H:ii:ss',
+                                            'MMMM dd, yyyy HH:mm:ss',
                                         )}
                                     </p>
                                 </div>
@@ -278,7 +278,7 @@ export default function Detail({ transaction }: TransactionProps) {
                                         {transaction.paid_at ? (
                                             format(
                                                 new Date(transaction.paid_at),
-                                                'MMMM dd, yyyy H:ii:ss',
+                                                'MMMM dd, yyyy HH:mm:ss',
                                             )
                                         ) : (
                                             <span>-</span>
@@ -295,7 +295,7 @@ export default function Detail({ transaction }: TransactionProps) {
                                                 new Date(
                                                     transaction.canceled_at,
                                                 ),
-                                                'MMMM dd, yyyy H:ii:ss',
+                                                'MMMM dd, yyyy HH:mm:ss',
                                             )
                                         ) : (
                                             <span>-</span>
@@ -312,7 +312,7 @@ export default function Detail({ transaction }: TransactionProps) {
                                                 new Date(
                                                     transaction.completed_at,
                                                 ),
-                                                'MMMM dd, yyyy H:ii:ss',
+                                                'MMMM dd, yyyy HH:mm:ss',
                                             )
                                         ) : (
                                             <span>-</span>
